@@ -1,9 +1,6 @@
 AOS.init();
 
-const sound = new Audio("./pop.mp3");
-const button = document.querySelector(".secret-button");
-
-const pop = () => sound.play();
+const button = document.querySelector(".heart-secret-button");
 
 button.addEventListener("click", function (e) {
   party.confetti(this, {
@@ -19,5 +16,4 @@ button.addEventListener("click", function (e) {
       "roundedRectangle",
     ],
   });
-  pop();
 });

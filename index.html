@@ -3,10 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hello I'm Ettore, a developer.
+      I like to build things."
+    />
     <title>Ettore Candeloro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css" />
@@ -21,9 +28,30 @@
     <div class="page" id="hero">
       <nav>
         <ul>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
-          <li><a href="#contactme" class="nav-link">Contact Me</a></li>
+          <li>
+            <a
+              href="#projects"
+              aria-label="link to scroll down to my projects section"
+              class="nav-link"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#curriculum"
+              aria-label="link to scroll down to my curriculum section"
+              class="nav-link"
+              >Curriculum</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contactme"
+              aria-label="link to scroll down to the contact me section"
+              class="nav-link"
+              >Contact Me</a
+            >
+          </li>
         </ul>
       </nav>
       <div class="main-container" data-aos="fade-up">
@@ -34,26 +62,42 @@
           <h2 class="text-secondary">
             I like to build <span class="tertiary">things</span>
           </h2>
-          <button class="button-primary">
-            <a href="#projects">See my Projects</a>
-          </button>
+          <a
+            href="#projects"
+            aria-label="link to scroll down to my projects section"
+          >
+            <button class="button-primary">See my Projects</button>
+          </a>
         </div>
-        <div class="grid-container">
+        <div class="hero-grid-container">
           <div class="block one">Ciao!</div>
           <div class="block two">Hola!</div>
-          <div class="block three">Salut!</div>
-          <div class="block four">Guten Tag!</div>
+          <div class="block three">Olá!</div>
+          <div class="block four">Salut!</div>
           <div class="block five">你好!</div>
           <div class="block six">こんにちは!</div>
           <div class="block seven">أهلاً!</div>
-          <div class="block eight">Olá!</div>
+          <div class="block eight">Guten Tag!</div>
           <div class="block nine">ПРИВЕТ!</div>
           <div class="block ten">नमस्ते!</div>
         </div>
       </div>
-      <div class="nav-arrow">
-        <a href="#projects">
-          <span class="material-symbols-rounded"> expand_more </span>
+      <div class="nav-arrow-container">
+        <a
+          href="#projects"
+          aria-label="link to scroll down to my projects section"
+        >
+          <svg
+            class="nav-arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z"
+            />
+          </svg>
         </a>
       </div>
     </div>
@@ -61,43 +105,62 @@
       <h1 class="text-primary title">
         <span class="primary">Projects</span> I worked on
       </h1>
-      <div class="projects-grid" data-aos="fade-up">
-        <div class="project-card project-1">
-          <h3 class="project-title">
+      <div class="cards-grid-container" data-aos="fade-up">
+        <div class="card project-1">
+          <h3 class="card-title">
             TACC - Training for Automotive Companies Creation
           </h3>
-          <p class="duration">OCT 2022 - JUN 2023</p>
-          <p class="project-description">
+          <p class="card-subtitle">OCT 2022 - JUN 2023</p>
+          <p class="card-text">
             Entrepreneurial academic initiative, working within a
             multidisciplinary team to cultivate a business idea and prototype
             for the automotive sector.
           </p>
 
-          <p class="project-description">
+          <p class="card-text">
             Our project, called BeyonTouch, centers on developing a sensor to
             detect driver alcohol levels, aimed at accident prevention.
           </p>
-          <button class="button-primary project-button">
-            <a href="https://beyontouch.carrd.co/">Project Page</a>
-          </button>
+          <a
+            href="https://beyontouch.carrd.co/"
+            aria-label="BeyonTouch project page link"
+          >
+            <button class="button-secondary">Project Page</button></a
+          >
         </div>
-        <div class="project-card project-2">
-          <h3 class="project-title">Technical Portfolio</h3>
-          <p class="duration">JUN 2021 - ONGOING</p>
-          <p class="project-description">
+        <div class="card project-2">
+          <h3 class="card-title">Technical Portfolio</h3>
+          <p class="card-subtitle">JUN 2021 - ONGOING</p>
+          <p class="card-text">
             GitHub portfolio with a mix of personal and academic projects
             demonstrating my use and ongoing learning of various tools and
             programming languages.
           </p>
-          <p class="project-description">Click the button explore my work.</p>
-          <button class="button-primary project-button">
-            <a href="https://github.com/e-candeloro">Git-Hub Portfolio</a>
-          </button>
+          <p class="card-text">Click the button explore my work.</p>
+
+          <a
+            href="https://github.com/e-candeloro"
+            aria-label="Git Hub portolio link"
+            ><button class="button-secondary">Git-Hub Portfolio</button>
+          </a>
         </div>
       </div>
-      <div class="nav-arrow">
-        <a href="#curriculum">
-          <span class="material-symbols-rounded"> expand_more </span>
+      <div class="nav-arrow-container">
+        <a
+          href="#curriculum"
+          aria-label="link to scroll down to my curriculum section"
+        >
+          <svg
+            class="nav-arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z"
+            />
+          </svg>
         </a>
       </div>
     </div>
@@ -105,99 +168,110 @@
       <h1 class="text-primary title">
         <span class="secondary">Curriculum</span>
       </h1>
-      <div class="cv-container" data-aos="fade-up">
-        <div class="cv-section">
-          <h3 class="project-title">M.Sc. in Computer Engineering</h3>
-          <p class="duration">OCT 2020 - OCT/DEC 2023</p>
-          <p class="project-description">Artificial Intelligence Engineering</p>
-
-          <p class="project-description">Expected Grade: 110/110 cum laude</p>
-          <div class="skills">
-            <span class="skill-card">Machine & Deep Learning</span>
-            <span class="skill-card">Computer Vision</span>
-            <span class="skill-card">Intelligent Distributed Systems</span>
-            <span class="skill-card">Data Analysis</span>
-            <span class="skill-card">Internet of Things</span>
-            <span class="skill-card">Robotics</span>
-            <span class="skill-card">Web Development</span>
-            <span class="skill-card">UX/UI Design</span>
-            <span class="skill-card">Business Development</span>
-            <span class="skill-card">Lean Methodology</span>
-            <span class="skill-card">Business Plan</span>
-            <span class="skill-card">Pitching</span>
+      <div class="cards-grid-container" data-aos="fade-up">
+        <div class="card cv-card">
+          <h3 class="card-title">M.Sc. in Computer Engineering</h3>
+          <p class="card-subtitle">UNIMORE - OCT 2020 / DEC 2023</p>
+          <p class="card-text">Artificial Intelligence Engineering</p>
+          <p class="card-text">Expected Grade: 110/110 cum laude</p>
+          <p class="card-section-title">Topics Learned</p>
+          <div class="skills-container">
+            <span class="skill-tag">Machine & Deep Learning</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Intelligent Distributed Systems</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Internet of Things</span>
+            <span class="skill-tag">Robotics</span>
+            <span class="skill-tag">Web Development</span>
+            <span class="skill-tag">UX/UI Design</span>
+            <span class="skill-tag">Business Development</span>
+            <span class="skill-tag">Lean Methodology</span>
+            <span class="skill-tag">Business Plan</span>
+            <span class="skill-tag">Pitching</span>
           </div>
           <div class="line"></div>
-          <h3 class="project-title">B.Sc. in Electronic Engineering</h3>
-          <p class="duration">OCT 2015 – APR 2020</p>
-          <p class="project-description">Final Grade: 99/110</p>
-          <p class="project-description">
-            Thesis: IoT usage in Precision Agriculture
-          </p>
-          <button class="button-primary project-button">
-            <a
-              href="https://drive.google.com/file/d/1F8cTm4Fdc-PGl8b2HwOQmCvVRlhnHrVK/view?usp=sharing"
-              >Read my Thesis</a
-            >
-          </button>
+          <h3 class="card-title">B.Sc. in Electronic Engineering</h3>
+          <p class="card-subtitle">UNIMORE - OCT 2015 / APR 2020</p>
+          <p class="card-text">Final Grade: 99/110</p>
+          <p class="card-text">Thesis: IoT usage in Precision Agriculture</p>
+          <a
+            href="https://drive.google.com/file/d/1F8cTm4Fdc-PGl8b2HwOQmCvVRlhnHrVK/view?usp=sharing"
+            aria-label="link to my thesis"
+          >
+            <button class="button-secondary">Read my Thesis</button>
+          </a>
         </div>
-        <div class="cv-section">
-          <h3 class="project-title">Technical Skills</h3>
-          <p class="project-subtitle">Python</p>
-          <div class="skills">
-            <span class="skill-card">OpenCV</span>
-            <span class="skill-card">PyTorch</span>
-            <span class="skill-card">Numpy</span>
-            <span class="skill-card">Pandas</span>
-            <span class="skill-card">Matplotlib</span>
-            <span class="skill-card">Scikit-Learn</span>
-            <span class="skill-card">Django & DjangoREST</span>
-            <span class="skill-card">Flask</span>
-            <span class="skill-card">Gurobi Optimizer</span>
+        <div class="card cv-card">
+          <h3 class="card-title">Technical Skills</h3>
+          <p class="card-section-title">Python</p>
+          <div class="skills-container">
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Numpy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Scikit-Learn</span>
+            <span class="skill-tag">Django & DjangoREST</span>
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">Gurobi Optimizer</span>
           </div>
-          <p class="project-subtitle">Web Development & Design</p>
-          <div class="skills">
-            <span class="skill-card">HTML & CSS</span>
-            <span class="skill-card">JavaScript</span>
-            <span class="skill-card">React</span>
-            <span class="skill-card">NodeJS</span>
-            <span class="skill-card">Figma</span>
-            <span class="skill-card">UI Guidelines & Heuristics</span>
-            <span class="skill-card">UX Testing</span>
+          <p class="card-section-title">Web Development & Design</p>
+          <div class="skills-container">
+            <span class="skill-tag">HTML & CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">NodeJS</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">UI Guidelines & Heuristics</span>
+            <span class="skill-tag">UX Testing</span>
           </div>
-          <p class="project-subtitle">Others</p>
-          <div class="skills">
-            <span class="skill-card">Git & Git-Hub</span>
-            <span class="skill-card">VS Code</span>
-            <span class="skill-card">C</span>
-            <span class="skill-card">Assembly</span>
-            <span class="skill-card">MATLAB</span>
-            <span class="skill-card">Linux OS</span>
-            <span class="skill-card">ROS</span>
-            <span class="skill-card">Adobe Premiere & Photoshop</span>
+          <p class="card-section-title">Others</p>
+          <div class="skills-container">
+            <span class="skill-tag">Git & Git-Hub</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">Assembly</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">Linux OS</span>
+            <span class="skill-tag">ROS</span>
+            <span class="skill-tag">Adobe Premiere & Photoshop</span>
           </div>
           <div class="line"></div>
-          <h3 class="project-title">Soft Skills</h3>
-          <p class="project-subtitle">Work and Group</p>
-          <div class="skills">
-            <span class="skill-card">Team Work</span>
-            <span class="skill-card">Collaborative</span>
-            <span class="skill-card">Client Interaction</span>
-            <span class="skill-card">Problem Solving</span>
-            <span class="skill-card">Identifying Value Creation</span>
+          <h3 class="card-title">Soft Skills</h3>
+          <p class="card-section-title">Work and Group</p>
+          <div class="skills-container">
+            <span class="skill-tag">Team Work</span>
+            <span class="skill-tag">Collaborative</span>
+            <span class="skill-tag">Client Interaction</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Identifying Value Creation</span>
           </div>
-          <p class="project-subtitle">Personal Strenghts</p>
-          <div class="skills">
-            <span class="skill-card">Curiosity</span>
-            <span class="skill-card">Polyhedric</span>
-            <span class="skill-card">Constant Learner</span>
-            <span class="skill-card">High Openness</span>
-            <span class="skill-card">Entrepreneurially-minded</span>
+          <p class="card-section-title">Personal Strenghts</p>
+          <div class="skills-container">
+            <span class="skill-tag">Curiosity</span>
+            <span class="skill-tag">Polyhedric</span>
+            <span class="skill-tag">Constant Learner</span>
+            <span class="skill-tag">High Openness</span>
+            <span class="skill-tag">Entrepreneurially-minded</span>
           </div>
         </div>
       </div>
-      <div class="nav-arrow">
-        <a href="#contactme">
-          <span class="material-symbols-rounded"> expand_more </span>
+      <div class="nav-arrow-container">
+        <a
+          href="#contactme"
+          aria-label="link to scroll down to the contact me section"
+        >
+          <svg
+            class="nav-arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z"
+            />
+          </svg>
         </a>
       </div>
     </div>
@@ -205,19 +279,21 @@
       <h1 class="text-primary title">
         <span class="tertiary">Contact Me</span>
       </h1>
-      <div class="contact-container" data-aos="fade-up">
-        <div class="contact-section">
+      <div class="cards-grid-container" data-aos="fade-up">
+        <div class="card contact-card">
           <div>
-            <h2 class="text-secondary">Let's Connect! 💼</h2>
-            <p class="project-description">
+            <h2 class="card-title">Let's Connect! 💼</h2>
+            <p class="card-text">
               Interested in collaborating or discussing a project?
             </p>
-            <p class="project-description">I'm just a message away ✉️</p>
+            <p class="card-text">I'm just a message away ✉️</p>
           </div>
           <div class="icons-container">
-            <a href="https://github.com/e-candeloro"
+            <a
+              href="https://github.com/e-candeloro"
+              aria-label="link to my git hub profile"
               ><svg
-                class="icon github"
+                class="icon"
                 xmlns="http://www.w3.org/2000/svg"
                 height="1em"
                 viewBox="0 0 496 512"
@@ -233,7 +309,9 @@
                 />
               </svg>
             </a>
-            <a href="https://linkedin.com/in/ettore-candeloro-900081162"
+            <a
+              href="https://linkedin.com/in/ettore-candeloro-900081162"
+              aria-label="link to my linkedin profile"
               ><svg
                 class="icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -251,9 +329,11 @@
                 />
               </svg>
             </a>
-            <a href="mailto:candeloroettore@gmail.com"
+            <a
+              href="mailto:candeloroettore@gmail.com"
+              aria-label="link to my email"
               ><svg
-                class="icon email"
+                class="icon"
                 xmlns="http://www.w3.org/2000/svg"
                 height="1em"
                 viewBox="0 0 512 512"
@@ -273,14 +353,25 @@
         </div>
       </div>
       <div>
-        <div class="nav-arrow">
-          <a href="#hero">
-            <span class="material-symbols-rounded reverse"> expand_more </span>
+        <div class="nav-arrow-container">
+          <a href="#hero" aria-label="link to scroll up to the hero section">
+            <svg
+              class="nav-arrow reverse"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+            >
+              <path
+                d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z"
+              />
+            </svg>
           </a>
         </div>
         <footer>
           <p>
-            Made with <span class="secret-button">❤️</span> by Ettore Candeloro
+            Made with <span class="heart-secret-button">❤️</span> by Ettore
+            Candeloro
           </p>
         </footer>
       </div>
