@@ -125,6 +125,7 @@ li:last-child a:hover {
     justify-content: center;
     gap: 3rem;
     margin: 5rem 2rem;
+    
 }
 
 .text-hero {
@@ -139,6 +140,7 @@ li:last-child a:hover {
     margin: 1rem 2rem;
     font-size: clamp(1rem, 8vw, 3rem);
     text-wrap: balance;
+    line-height: 1.15;
 }
 
 .text-primary {
@@ -614,6 +616,12 @@ footer {
 
 @media screen and (max-width: 768px) {
 
+    body {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
     .title {
         text-align: center;
         margin: 0.5rem 0.5rem;
