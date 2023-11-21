@@ -325,7 +325,7 @@ li:last-child a:hover {
     display: grid;
     grid-template-columns: repeat(1, minmax(10rem, max-content));
     grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 1rem;
+    gap: 2rem;
     margin: 2rem;
     justify-content: center;
     align-content: center;
