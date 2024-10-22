@@ -252,7 +252,9 @@ li:last-child a:hover {
     user-select: none;
 }
 
-.block:hover {
+/* Hover effect */
+.block:hover,
+.block.active {
     border-radius: 0;
     color: var(--text);
     background-color: transparent;
