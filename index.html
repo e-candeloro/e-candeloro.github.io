@@ -1,430 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hello I'm Ettore, a developer.
-      I like to build things."
-    />
-    <title>Ettore Candeloro</title>
-    <link rel="icon" type="image/x-icon" href="icon/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"
-      defer
-    ></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <div class="page" id="hero">
-      <nav>
-        <ul>
-          <li>
-            <a
-              href="#projects"
-              aria-label="link to scroll down to my projects section"
-              class="nav-link"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a
-              href="#curriculum"
-              aria-label="link to scroll down to my curriculum section"
-              class="nav-link"
-              >Curriculum</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contactme"
-              aria-label="link to scroll down to the contact me section"
-              class="nav-link"
-              >Contact Me</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="main-container" data-aos="fade-up">
-        <div class="text-hero">
-          <h1 class="text-primary">
-            Hello, I'm <span class="primary">Ettore</span>
-          </h1>
-          <h2 class="text-secondary">
-            I like to build <span class="tertiary">things</span>
-          </h2>
-          <a
-            href="#projects"
-            aria-label="link to scroll down to my projects section"
-          >
-            <button class="button-primary">See my Projects</button>
-          </a>
-        </div>
-        <div class="hero-grid-container">
-          <div class="block one">Ciao!</div>
-          <div class="block two">Hola!</div>
-          <div class="block three">Olá!</div>
-          <div class="block four">Salut!</div>
-          <div class="block five">你好!</div>
-          <div class="block six">こんにちは!</div>
-          <div class="block seven">أهلاً!</div>
-          <div class="block eight">Guten Tag!</div>
-          <div class="block nine">ПРИВЕТ!</div>
-          <div class="block ten">नमस्ते!</div>
-        </div>
-      </div>
-      <div class="nav-arrow-container">
-        <a
-          href="#projects"
-          aria-label="link to scroll down to my projects section"
-        >
-          <svg
-            class="nav-arrow"
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            viewBox="0 -960 960 960"
-            width="24"
-          >
-            <path
-              d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z"
-            />
-          </svg>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hello I'm Ettore, a developer.
+      I like to build things." />
+  <title>Ettore Candeloro</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="icon/favicon.ico" />
+
+  <!-- Preload and load fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" as="style" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" />
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Party.js with async -->
+  <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js" async></script>
+
+  <!-- AOS JavaScript with defer to ensure DOM is loaded first -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+
+  <!-- Main script -->
+  <script src="script.js" defer></script>
+
+</head>
+
+<body>
+  <div class="page" id="hero">
+    <nav>
+      <ul>
+        <li>
+          <a href="#projects" aria-label="link to scroll down to my projects section" class="nav-link">Projects</a>
+        </li>
+        <li>
+          <a href="#curriculum" aria-label="link to scroll down to my curriculum section"
+            class="nav-link">Curriculum</a>
+        </li>
+        <li>
+          <a href="#contactme" aria-label="link to scroll down to the contact me section" class="nav-link">Contact
+            Me</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-container" data-aos="fade-up">
+      <div class="text-hero">
+        <h1 class="text-primary">
+          Hello, I'm <span class="primary">Ettore</span>
+        </h1>
+        <h2 class="text-secondary">
+          I like to build <span class="tertiary">things</span>
+        </h2>
+        <a href="#projects" aria-label="link to scroll down to my projects section">
+          <button class="button-primary">See my Projects</button>
         </a>
       </div>
-    </div>
-    <div class="page" id="projects">
-      <h1 class="text-primary title">
-        <span class="primary">Projects</span> I worked on
-      </h1>
-      <div class="cards-grid-container" data-aos="fade-up">
-        <div class="card project-1">
-          <h3 class="card-title">
-            University & Accelerator Programs - startup creation and development
-          </h3>
-          <p class="card-subtitle">UNIMORE & E.R. | OCT 2022 - JAN 2024</p>
-          <p class="card-text">
-            <a href="https://tacc.unimore.it/en/" class="link">TACC</a> alum:
-            partecipated in the entrepreneurial academic course offered by
-            <a href="https://international.unimore.it/" class="link">UNIMORE</a
-            >, focused on developing a business idea in a multidisciplinary team
-            with the aim of launching a business in the automotive field.
-          </p>
-
-          <p class="card-text">
-            The project created by our team during the TACC, called BeyonTouch,
-            was a finalist in the
-            <a class="link" href="https://www.startcupemiliaromagna.it/"
-              >Start-Cup</a
-            >
-            2023 accelerator program of the Emilia Romagna region.
-          </p>
-          <p class="card-text">
-            BeyonTouch also completed the hardware acceleratorion program
-            <a href="https://techup.dd-re.it/" class="link">Tech-Up</a> 2023.
-          </p>
-
-          <a
-            href="https://beyontouch.carrd.co/"
-            aria-label="BeyonTouch project page link"
-          >
-            <button class="button-secondary">Project Page</button></a
-          >
-        </div>
-        <div class="card project-2">
-          <h3 class="card-title">Technical Portfolio</h3>
-          <p class="card-subtitle">Personal | JUN 2021 - ONGOING</p>
-          <p class="card-text">
-            GitHub portfolio with a mix of personal and academic projects
-            demonstrating my use and ongoing learning of various tools and
-            programming languages.
-          </p>
-          <p class="card-text">Click the button explore my work.</p>
-
-          <a
-            href="https://github.com/e-candeloro"
-            aria-label="Git Hub portolio link"
-            ><button class="button-secondary">Git-Hub Portfolio</button>
-          </a>
-        </div>
+      <div class="hero-grid-container">
+        <div class="block one">Ciao!</div>
+        <div class="block two">Hola!</div>
+        <div class="block three">Olá!</div>
+        <div class="block four">Salut!</div>
+        <div class="block five">你好!</div>
+        <div class="block six">こんにちは!</div>
+        <div class="block seven">أهلاً!</div>
+        <div class="block eight">Guten Tag!</div>
+        <div class="block nine">ПРИВЕТ!</div>
+        <div class="block ten">नमस्ते!</div>
       </div>
-      <div class="nav-arrow-container">
-        <a
-          href="#curriculum"
-          aria-label="link to scroll down to my curriculum section"
-        >
-          <svg
-            class="nav-arrow"
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            viewBox="0 -960 960 960"
-            width="24"
-          >
-            <path
-              d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z"
-            />
-          </svg>
+    </div>
+    <div class="nav-arrow-container">
+      <a href="#projects" aria-label="link to scroll down to my projects section">
+        <svg class="nav-arrow" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+          <path
+            d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="page" id="projects">
+    <h1 class="text-primary title">
+      <span class="primary">Projects</span> I worked on
+    </h1>
+    <div class="cards-grid-container" data-aos="fade-up">
+      <div class="card project-1">
+        <h3 class="card-title">Technical Portfolio</h3>
+        <p class="card-subtitle">Personal | JUN 2021 - ONGOING</p>
+        <p class="card-text">
+          GitHub portfolio with a mix of personal and academic projects
+          demonstrating my use and ongoing learning of various tools and
+          programming languages.
+        </p>
+        <p class="card-text">Click the button explore my work.</p>
+
+        <a href="https://github.com/e-candeloro" aria-label="Git Hub portolio link"><button
+            class="button-secondary">Git-Hub
+            Portfolio</button>
         </a>
       </div>
+      <div class="card project-2">
+        <h3 class="card-title">
+          Freelancer and Consultant
+        </h3>
+        <p class="card-subtitle">E.R. region | DEC 2023 - Present</p>
+        <p class="card-text">
+          Freelance collaborator with <a href="https://www.fondazionerei.it/" class="link">Fondazione REI</a>, assisting
+          companies in analyzing industrial data and developing AI models to enhance production efficiency.
+        </p>
+      </div>
+      <div class="card project-1">
+        <h3 class="card-title">
+          University & Accelerator Programs - startup creation and development
+        </h3>
+        <p class="card-subtitle">UNIMORE & E.R. | OCT 2022 - JAN 2024</p>
+        <p class="card-text">
+          <a href="https://tacc.unimore.it/en/" class="link">TACC</a> alum:
+          partecipated in the entrepreneurial academic course offered by
+          <a href="https://international.unimore.it/" class="link">UNIMORE</a>, focused on developing a business idea in
+          a multidisciplinary team
+          with the aim of launching a business in the automotive field.
+        </p>
+
+        <p class="card-text">
+          The project created by our team during the TACC, called BeyonTouch,
+          was a finalist in the
+          <a class="link" href="https://www.startcupemiliaromagna.it/">Start-Cup</a>
+          2023 accelerator program of the Emilia Romagna region.
+        </p>
+        <p class="card-text">
+          BeyonTouch also completed the hardware acceleratorion program
+          <a href="https://techup.dd-re.it/" class="link">Tech-Up</a> 2023.
+        </p>
+
+        <a href="https://beyontouch.carrd.co/" aria-label="BeyonTouch project page link">
+          <button class="button-secondary">Project Page</button></a>
+      </div>
+
     </div>
-    <div class="page" id="curriculum">
-      <h1 class="text-primary title">
-        <span class="secondary">Curriculum</span>
-      </h1>
-      <div class="cards-grid-container" data-aos="fade-up">
-        <div class="card cv-card">
-          <h3 class="card-title">Research Fellow in AI Medical Imaging</h3>
-          <p class="card-subtitle">UNIMORE | APR 2024 - ONGOING</p>
-          <p class="card-text">
-            Working in the
-            <a href="https://aimagelab.ing.unimore.it/imagelab/" class="link"
-              >AImageLab</a
-            >
-            research group on applying AI to medical imaging in real case
-            scenarios, collaborating with clinicians and developing proof of
-            concepts applications in Python and various AI and data analysis
-            frameworks.
-          </p>
-          <p class="card-section-title">Main Topics and Skills</p>
-          <div class="skills-container">
-            <span class="skill-tag">Cancer Detection</span>
-            <span class="skill-tag">Multi-label Classification</span>
-            <span class="skill-tag">Deep Learning Pipelines</span>
-            <span class="skill-tag">Image Processing</span>
-            <span class="skill-tag">Experiment Tracking</span>
-            <span class="skill-tag">Implementing SOTA best practices</span>
-            <span class="skill-tag">Code refactoring</span>
-            <span class="skill-tag">Software Engineering</span>
-          </div>
-        </div>
-        <div class="card cv-card">
-          <h3 class="card-title">M.Sc. in Computer Engineering</h3>
-          <p class="card-subtitle">UNIMORE | OCT 2020 - FEB. 2024</p>
-          <p class="card-text">Artificial Intelligence Engineering</p>
-          <p class="card-text">Final Grade: 110/110 cum laude</p>
-          <p class="card-text">
-            Thesis: Skin Lesion Classification Neural Networks Explained with
-            Generative Adversarial Networks
-          </p>
-          <a
-            href="https://docs.google.com/presentation/d/1AeH24imfGQzyaZsKTxcHP4QGQI5lRFDG/edit?usp=sharing&ouid=107269588971166995720&rtpof=true&sd=true"
-            aria-label="link to my master thesis presentation"
-          >
-            <button class="button-secondary">
-              Read my Thesis Presentation
-            </button>
-          </a>
-          <p class="card-section-title">Topics Learned</p>
-          <div class="skills-container">
-            <span class="skill-tag">Machine & Deep Learning</span>
-            <span class="skill-tag">Computer Vision</span>
-            <span class="skill-tag">Intelligent Distributed Systems</span>
-            <span class="skill-tag">Data Analysis</span>
-            <span class="skill-tag">Internet of Things</span>
-            <span class="skill-tag">Robotics</span>
-            <span class="skill-tag">Web Development</span>
-            <span class="skill-tag">UX/UI Design</span>
-            <span class="skill-tag">Business Development</span>
-            <span class="skill-tag">Lean Methodology</span>
-            <span class="skill-tag">Business Plan</span>
-            <span class="skill-tag">Pitching</span>
-          </div>
-          <div class="line"></div>
-          <h3 class="card-title">B.Sc. in Electronic Engineering</h3>
-          <p class="card-subtitle">UNIMORE | OCT 2015 - APR 2020</p>
-          <p class="card-text">Final Grade: 99/110</p>
-          <p class="card-text">Thesis: IoT usage in Precision Agriculture</p>
-          <a
-            href="https://drive.google.com/file/d/1F8cTm4Fdc-PGl8b2HwOQmCvVRlhnHrVK/view?usp=sharing"
-            aria-label="link to my thesis"
-          >
-            <button class="button-secondary">Read my Bachelor Thesis</button>
-          </a>
-        </div>
-        <div class="card cv-card">
-          <h3 class="card-title">Technical Skills</h3>
-          <p class="card-section-title">Python</p>
-          <div class="skills-container">
-            <span class="skill-tag">OpenCV</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">Numpy</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">Matplotlib</span>
-            <span class="skill-tag">Scikit-Learn</span>
-            <span class="skill-tag">Wandb</span>
-            <span class="skill-tag">Django & DjangoREST</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">Gurobi Optimizer</span>
-          </div>
-          <p class="card-section-title">Web Development & Design</p>
-          <div class="skills-container">
-            <span class="skill-tag">HTML & CSS</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">NodeJS</span>
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">UI Guidelines & Heuristics</span>
-            <span class="skill-tag">UX Testing</span>
-          </div>
-          <p class="card-section-title">Others</p>
-          <div class="skills-container">
-            <span class="skill-tag">Git & Git-Hub</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">C</span>
-            <span class="skill-tag">Assembly</span>
-            <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">Linux OS</span>
-            <span class="skill-tag">ROS</span>
-            <span class="skill-tag">Adobe Premiere & Photoshop</span>
-          </div>
-          <div class="line"></div>
-          <h3 class="card-title">Soft Skills</h3>
-          <p class="card-section-title">Work and Group</p>
-          <div class="skills-container">
-            <span class="skill-tag">Team Work</span>
-            <span class="skill-tag">Collaborative</span>
-            <span class="skill-tag">Client Interaction</span>
-            <span class="skill-tag">Problem Solving</span>
-            <span class="skill-tag">Identifying Value Creation</span>
-          </div>
-          <p class="card-section-title">Personal Strenghts</p>
-          <div class="skills-container">
-            <span class="skill-tag">Curiosity</span>
-            <span class="skill-tag">Polyhedric</span>
-            <span class="skill-tag">Constant Learner</span>
-            <span class="skill-tag">High Openness</span>
-            <span class="skill-tag">Entrepreneurially-minded</span>
-          </div>
+    <div class="nav-arrow-container">
+      <a href="#curriculum" aria-label="link to scroll down to my curriculum section">
+        <svg class="nav-arrow" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+          <path
+            d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="page" id="curriculum">
+    <h1 class="text-primary title">
+      <span class="secondary">Curriculum</span>
+    </h1>
+    <div class="cards-grid-container" data-aos="fade-up">
+      <div class="card cv-card">
+        <h3 class="card-title">Research Fellow in AI Medical Imaging</h3>
+        <p class="card-subtitle">UNIMORE | APR 2024 - ONGOING</p>
+        <p class="card-text">
+          Working in the
+          <a href="https://aimagelab.ing.unimore.it/imagelab/" class="link">AImageLab</a>
+          research group on applying AI to medical imaging in real case
+          scenarios, collaborating with clinicians and developing proof of
+          concepts applications in Python and various AI and data analysis
+          frameworks.
+        </p>
+        <p class="card-section-title">Main Topics and Skills</p>
+        <div class="skills-container">
+          <span class="skill-tag">Cancer Detection</span>
+          <span class="skill-tag">Multi-label Classification</span>
+          <span class="skill-tag">Deep Learning Pipelines</span>
+          <span class="skill-tag">Image Processing</span>
+          <span class="skill-tag">Experiment Tracking</span>
+          <span class="skill-tag">Implementing SOTA best practices</span>
+          <span class="skill-tag">Code refactoring</span>
+          <span class="skill-tag">Software Engineering</span>
         </div>
       </div>
-      <div class="nav-arrow-container">
-        <a
-          href="#contactme"
-          aria-label="link to scroll down to the contact me section"
-        >
-          <svg
-            class="nav-arrow"
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            viewBox="0 -960 960 960"
-            width="24"
-          >
-            <path
-              d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z"
-            />
-          </svg>
+      <div class="card cv-card">
+        <h3 class="card-title">M.Sc. in Computer Engineering</h3>
+        <p class="card-subtitle">UNIMORE | OCT 2020 - FEB. 2024</p>
+        <p class="card-text">Artificial Intelligence Engineering</p>
+        <p class="card-text">Final Grade: 110/110 cum laude</p>
+        <p class="card-text">
+          Thesis: Skin Lesion Classification Neural Networks Explained with
+          Generative Adversarial Networks
+        </p>
+        <a href="https://docs.google.com/presentation/d/1AeH24imfGQzyaZsKTxcHP4QGQI5lRFDG/edit?usp=sharing&ouid=107269588971166995720&rtpof=true&sd=true"
+          aria-label="link to my master thesis presentation">
+          <button class="button-secondary">
+            Read my Thesis Presentation
+          </button>
+        </a>
+        <p class="card-section-title">Topics Learned</p>
+        <div class="skills-container">
+          <span class="skill-tag">Machine & Deep Learning</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">Intelligent Distributed Systems</span>
+          <span class="skill-tag">Data Analysis</span>
+          <span class="skill-tag">Internet of Things</span>
+          <span class="skill-tag">Robotics</span>
+          <span class="skill-tag">Web Development</span>
+          <span class="skill-tag">UX/UI Design</span>
+          <span class="skill-tag">Business Development</span>
+          <span class="skill-tag">Lean Methodology</span>
+          <span class="skill-tag">Business Plan</span>
+          <span class="skill-tag">Pitching</span>
+        </div>
+        <div class="line"></div>
+        <h3 class="card-title">B.Sc. in Electronic Engineering</h3>
+        <p class="card-subtitle">UNIMORE | OCT 2015 - APR 2020</p>
+        <p class="card-text">Final Grade: 99/110</p>
+        <p class="card-text">Thesis: IoT usage in Precision Agriculture</p>
+        <a href="https://drive.google.com/file/d/1F8cTm4Fdc-PGl8b2HwOQmCvVRlhnHrVK/view?usp=sharing"
+          aria-label="link to my thesis">
+          <button class="button-secondary">Read my Bachelor Thesis</button>
         </a>
       </div>
-    </div>
-    <div class="page" id="contactme">
-      <h1 class="text-primary title">
-        <span class="tertiary">Contact Me</span>
-      </h1>
-      <div class="cards-grid-container" data-aos="fade-up">
-        <div class="card contact-card">
-          <div>
-            <h2 class="card-title">Let's Connect! 💼</h2>
-            <p class="card-text">
-              Interested in collaborating or discussing a project?
-            </p>
-            <p class="card-text">I'm just a message away ✉️</p>
-          </div>
-          <div class="icons-container">
-            <a
-              href="https://github.com/e-candeloro"
-              aria-label="link to my git hub profile"
-              ><svg
-                class="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 496 512"
-              >
-                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <style>
-                  svg {
-                    fill: #000000;
-                  }
-                </style>
-                <path
-                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://linkedin.com/in/ettore-candeloro-900081162"
-              aria-label="link to my linkedin profile"
-              ><svg
-                class="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 448 512"
-              >
-                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <style>
-                  svg {
-                    fill: #000000;
-                  }
-                </style>
-                <path
-                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-                />
-              </svg>
-            </a>
-            <a
-              href="mailto:candeloroettore@gmail.com"
-              aria-label="link to my email"
-              ><svg
-                class="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 512 512"
-              >
-                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <style>
-                  svg {
-                    fill: #000000;
-                  }
-                </style>
-                <path
-                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-                />
-              </svg>
-            </a>
-          </div>
+      <div class="card cv-card">
+        <h3 class="card-title">Technical Skills</h3>
+        <p class="card-section-title">Python</p>
+        <div class="skills-container">
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">Numpy</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Scikit-Learn</span>
+          <span class="skill-tag">Wandb</span>
+          <span class="skill-tag">Django & DjangoREST</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">Gurobi Optimizer</span>
+        </div>
+        <p class="card-section-title">Web Development & Design</p>
+        <div class="skills-container">
+          <span class="skill-tag">HTML & CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">NodeJS</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">UI Guidelines & Heuristics</span>
+          <span class="skill-tag">UX Testing</span>
+        </div>
+        <p class="card-section-title">Others</p>
+        <div class="skills-container">
+          <span class="skill-tag">Git & Git-Hub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">Assembly</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">Linux OS</span>
+          <span class="skill-tag">ROS</span>
+          <span class="skill-tag">Adobe Premiere & Photoshop</span>
+        </div>
+        <div class="line"></div>
+        <h3 class="card-title">Soft Skills</h3>
+        <p class="card-section-title">Work and Group</p>
+        <div class="skills-container">
+          <span class="skill-tag">Team Work</span>
+          <span class="skill-tag">Collaborative</span>
+          <span class="skill-tag">Client Interaction</span>
+          <span class="skill-tag">Problem Solving</span>
+          <span class="skill-tag">Identifying Value Creation</span>
+        </div>
+        <p class="card-section-title">Personal Strenghts</p>
+        <div class="skills-container">
+          <span class="skill-tag">Curiosity</span>
+          <span class="skill-tag">Polyhedric</span>
+          <span class="skill-tag">Constant Learner</span>
+          <span class="skill-tag">High Openness</span>
+          <span class="skill-tag">Entrepreneurially-minded</span>
         </div>
       </div>
-      <div>
-        <div class="nav-arrow-container">
-          <a href="#hero" aria-label="link to scroll up to the hero section">
-            <svg
-              class="nav-arrow reverse"
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              viewBox="0 -960 960 960"
-              width="24"
-            >
+    </div>
+    <div class="nav-arrow-container">
+      <a href="#contactme" aria-label="link to scroll down to the contact me section">
+        <svg class="nav-arrow" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+          <path
+            d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="page" id="contactme">
+    <h1 class="text-primary title">
+      <span class="tertiary">Contact Me</span>
+    </h1>
+    <div class="cards-grid-container" data-aos="fade-up">
+      <div class="card contact-card">
+        <div>
+          <h2 class="card-title">Let's Connect! 💼</h2>
+          <p class="card-text">
+            Interested in collaborating or discussing a project?
+          </p>
+          <p class="card-text">I'm just a message away ✉️</p>
+        </div>
+        <div class="icons-container">
+          <a href="https://github.com/e-candeloro" aria-label="link to my git hub profile"><svg class="icon"
+              xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 496 512">
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #000000;
+                }
+              </style>
               <path
-                d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z"
-              />
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/ettore-candeloro-900081162" aria-label="link to my linkedin profile"><svg
+              class="icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #000000;
+                }
+              </style>
+              <path
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+            </svg>
+          </a>
+          <a href="mailto:candeloroettore@gmail.com" aria-label="link to my email"><svg class="icon"
+              xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+              <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #000000;
+                }
+              </style>
+              <path
+                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
             </svg>
           </a>
         </div>
-        <footer>
-          <p>
-            Made with <span class="heart-secret-button">❤️</span> by Ettore
-            Candeloro
-          </p>
-        </footer>
       </div>
     </div>
-  </body>
+    <div>
+      <div class="nav-arrow-container">
+        <a href="#hero" aria-label="link to scroll up to the hero section">
+          <svg class="nav-arrow reverse" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+            width="24">
+            <path
+              d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z" />
+          </svg>
+        </a>
+      </div>
+      <footer>
+        <p>
+          Made with <span class="heart-secret-button">❤️</span> by Ettore
+          Candeloro
+        </p>
+      </footer>
+    </div>
+  </div>
+</body>
+
 </html>
