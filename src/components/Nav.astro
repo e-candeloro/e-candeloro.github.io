@@ -1,0 +1,43 @@
+---
+import type { Accent } from "../data/site";
+
+interface NavLink {
+  href: string;
+  label: string;
+  ariaLabel: string;
+  accent: Accent;
+}
+
+interface Props {
+  links: NavLink[];
+}
+
+const { links } = Astro.props;
+
+const accentClasses: Record<Accent, string> = {
+  primary: "hover:border-primary hover:bg-primary",
+  secondary: "hover:border-secondary hover:bg-secondary",
+  tertiary: "hover:border-tertiary hover:bg-tertiary",
+};
+---
+
+<nav>
+  <ul class="flex list-none flex-row items-center justify-around px-8 pt-4 max-md:min-w-[200px] max-md:flex-wrap max-md:px-2">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            aria-label={link.ariaLabel}
+            class:list={[
+              "nav-link rounded-[2em] border-2 border-transparent px-[0.6rem] py-[0.2rem] text-[clamp(0.9rem,4vw,1.5rem)] text-text transition-all duration-300 ease-in-out [font-weight:lighter] hover:text-background",
+              accentClasses[link.accent],
+            ]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

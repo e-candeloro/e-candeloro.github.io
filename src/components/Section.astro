@@ -1,0 +1,12 @@
+---
+interface Props {
+  id: string;
+  className?: string;
+}
+
+const { id, className = "" } = Astro.props;
+---
+
+<section id={id} class:list={["page flex min-h-screen flex-col justify-between", className]}>
+  <slot />
+</section>

@@ -1,0 +1,36 @@
+---
+import ButtonLink from "../ButtonLink.astro";
+import Card from "../Card.astro";
+import CardSubtitle from "../CardSubtitle.astro";
+import CardText from "../CardText.astro";
+import CardTitle from "../CardTitle.astro";
+---
+
+<Card variant="project-2">
+  <CardTitle>University & Accelerator Programs - startup creation and development</CardTitle>
+  <CardSubtitle>UNIMORE & E.R. | OCT 2022 - JAN 2024</CardSubtitle>
+  <CardText>
+    <a href="https://tacc.unimore.it/en/" class="link">TACC</a> alum: participated in the entrepreneurial academic
+    course offered by <a href="https://international.unimore.it/" class="link">UNIMORE</a>, focused on developing a
+    business idea in a multidisciplinary team with the aim of launching a business in the automotive field.
+  </CardText>
+  <CardText>
+    The project created by our team during the TACC, called BeyonTouch, was a finalist in the <a
+      class="link"
+      href="https://www.startcupemiliaromagna.it/">Start-Cup</a
+    > 2023 accelerator program of the Emilia Romagna region.
+  </CardText>
+  <CardText>
+    BeyonTouch also completed the hardware acceleration program <a href="https://techup.dd-re.it/" class="link"
+      >Tech-Up</a
+    > 2023.
+  </CardText>
+  <ButtonLink
+    link={{
+      href: "https://beyontouch.carrd.co/",
+      label: "Project Page",
+      ariaLabel: "BeyonTouch project page link",
+      variant: "secondary",
+    }}
+  />
+</Card>

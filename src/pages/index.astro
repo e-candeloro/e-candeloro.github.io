@@ -1,0 +1,82 @@
+---
+import ButtonLink from "../components/ButtonLink.astro";
+import CardsGrid from "../components/CardsGrid.astro";
+import Footer from "../components/Footer.astro";
+import HeroGrid from "../components/HeroGrid.astro";
+import Nav from "../components/Nav.astro";
+import NavArrow from "../components/NavArrow.astro";
+import Section from "../components/Section.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import BrainXCard from "../components/cards/BrainXCard.astro";
+import ContactCard from "../components/cards/ContactCard.astro";
+import EducationCard from "../components/cards/EducationCard.astro";
+import FreelancerConsultantCard from "../components/cards/FreelancerConsultantCard.astro";
+import ResearchFellowCard from "../components/cards/ResearchFellowCard.astro";
+import SkillsCard from "../components/cards/SkillsCard.astro";
+import StartupProgramsCard from "../components/cards/StartupProgramsCard.astro";
+import TechnicalPortfolioCard from "../components/cards/TechnicalPortfolioCard.astro";
+import { footer, hero, navLinks, siteMeta } from "../data/site";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title={siteMeta.title} description={siteMeta.description}>
+  <Section id="hero">
+    <Nav links={navLinks} />
+
+    <div class="main-container mx-8 my-20 flex flex-row-reverse items-center justify-center gap-12 max-md:mx-4 max-md:my-8 max-md:flex-col max-md:gap-4" data-aos="fade-up">
+      <div class="text-hero mt-0 flex flex-col items-start max-md:mb-4 max-md:mt-4 max-md:items-center max-md:text-center">
+        <h1 class="text-[clamp(1rem,10vw,3rem)] [font-weight:bold] [line-height:normal]">
+          {hero.titlePrefix} <span class="text-primary">{hero.titleAccent}</span>
+        </h1>
+        <h2 class="text-[clamp(0.5rem,5vw,1.5rem)] [font-weight:bold] [line-height:normal]">
+          {hero.subtitlePrefix} <span class="text-tertiary">{hero.subtitleAccent}</span>
+        </h2>
+        <ButtonLink link={hero.cta} />
+      </div>
+
+      <HeroGrid />
+    </div>
+
+    <NavArrow href="#projects" ariaLabel="link to scroll down to my projects section" />
+  </Section>
+
+  <Section id="projects">
+    <SectionTitle title="Projects" accent="primary" />
+
+    <CardsGrid dataAos="fade-up">
+      <TechnicalPortfolioCard />
+      <BrainXCard />
+      <FreelancerConsultantCard />
+      <StartupProgramsCard />
+    </CardsGrid>
+
+    <NavArrow href="#curriculum" ariaLabel="link to scroll down to my curriculum section" />
+  </Section>
+
+  <Section id="curriculum">
+    <SectionTitle title="Curriculum" accent="secondary" />
+
+    <CardsGrid dataAos="fade-up">
+      <ResearchFellowCard />
+      <EducationCard />
+      <SkillsCard />
+    </CardsGrid>
+
+    <NavArrow href="#contactme" ariaLabel="link to scroll down to the contact me section" />
+  </Section>
+
+  <Section id="contactme">
+    <SectionTitle title="Contact Me" accent="tertiary" />
+
+    <CardsGrid dataAos="fade-up">
+      <ContactCard />
+    </CardsGrid>
+
+    <div>
+      <NavArrow href="#hero" ariaLabel="link to scroll up to the hero section" reverse />
+      <Footer textBeforeHeart={footer.textBeforeHeart} textAfterHeart={footer.textAfterHeart} />
+    </div>
+  </Section>
+
+  <script src="../scripts/home.js"></script>
+</Layout>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  href: string;
+  ariaLabel: string;
+  reverse?: boolean;
+}
+
+const { href, ariaLabel, reverse = false } = Astro.props;
+---
+
+<div class="nav-arrow-container mb-4 flex items-center justify-center">
+  <a href={href} aria-label={ariaLabel}>
+    <svg
+      class:list={[
+        "nav-arrow fill-text transition-all duration-300 ease-in-out",
+        reverse
+          ? "reverse scale-[3] rotate-180 hover:-translate-y-2 hover:scale-[3.2] hover:rotate-180 hover:fill-tertiary"
+          : "scale-[3] hover:-translate-y-[0.2rem] hover:scale-[3.2] hover:fill-secondary",
+      ]}
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 -960 960 960"
+      width="24"
+    >
+      <path d="M480-392q-6 0-11-2t-10-7L286-574q-4-4-4.5-9.5T286-594q5-5 10-5t10 5l174 174 174-174q4-4 9.5-4.5T674-594q5 5 5 10t-5 10L501-401q-5 5-10 7t-11 2Z" />
+    </svg>
+  </a>
+</div>

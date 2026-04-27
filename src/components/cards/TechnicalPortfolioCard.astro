@@ -1,0 +1,25 @@
+---
+import ButtonLink from "../ButtonLink.astro";
+import Card from "../Card.astro";
+import CardSubtitle from "../CardSubtitle.astro";
+import CardText from "../CardText.astro";
+import CardTitle from "../CardTitle.astro";
+---
+
+<Card variant="project-1">
+  <CardTitle>Technical Portfolio</CardTitle>
+  <CardSubtitle>Personal | JUN 2021 - ONGOING</CardSubtitle>
+  <CardText>
+    GitHub portfolio with a mix of personal and academic projects demonstrating my use and ongoing learning of various
+    tools and programming languages.
+  </CardText>
+  <CardText>Click the button explore my work.</CardText>
+  <ButtonLink
+    link={{
+      href: "https://github.com/e-candeloro",
+      label: "GitHub Portfolio",
+      ariaLabel: "GitHub portfolio link",
+      variant: "secondary",
+    }}
+  />
+</Card>

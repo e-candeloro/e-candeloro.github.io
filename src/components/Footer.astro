@@ -1,0 +1,14 @@
+---
+interface Props {
+  textBeforeHeart: string;
+  textAfterHeart: string;
+}
+
+const { textBeforeHeart, textAfterHeart } = Astro.props;
+---
+
+<footer class="flex min-h-2.5 flex-col items-center justify-center bg-primary px-0 py-4 text-center text-[clamp(0.5rem,4vw,1rem)] text-background [font-weight:bold] [-webkit-tap-highlight-color:transparent] select-none">
+  <p>
+    {textBeforeHeart} <span class="heart-secret-button" role="button" tabindex="0" aria-label="launch confetti">❤️</span> {textAfterHeart}
+  </p>
+</footer>

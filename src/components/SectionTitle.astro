@@ -1,0 +1,20 @@
+---
+import type { Accent } from "../data/site";
+
+interface Props {
+  title: string;
+  accent: Accent;
+}
+
+const { title, accent } = Astro.props;
+
+const accentClasses: Record<Accent, string> = {
+  primary: "text-primary",
+  secondary: "text-secondary",
+  tertiary: "text-tertiary",
+};
+---
+
+<h1 class="title mx-8 my-4 text-center text-[clamp(1rem,8vw,3rem)] leading-[1.15] [font-weight:bold] [text-wrap:balance] max-md:mx-2 max-md:my-2">
+  <span class={accentClasses[accent]}>{title}</span>
+</h1>

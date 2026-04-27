@@ -1,0 +1,14 @@
+---
+import { contact } from "../../data/site";
+import Card from "../Card.astro";
+import CardText from "../CardText.astro";
+import CardTitle from "../CardTitle.astro";
+import SocialIcons from "../SocialIcons.astro";
+---
+
+<Card variant="contact-card">
+  <CardTitle>Let's Connect! 💼</CardTitle>
+  <CardText contact>Interested in collaborating or discussing a project?</CardText>
+  <CardText contact>I'm just a message away ✉️</CardText>
+  <SocialIcons links={contact.socials} />
+</Card>
