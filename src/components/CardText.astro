@@ -1,0 +1,16 @@
+---
+interface Props {
+  contact?: boolean;
+}
+
+const { contact = false } = Astro.props;
+---
+
+<p
+  class:list={[
+    "card-text px-4 py-2 text-center text-[clamp(1rem,5vw,1.2rem)] leading-6 text-text group-hover/card:text-background group-[.in-view]/card:text-background max-md:px-2",
+    contact && "text-[1.2rem] leading-[1.5]",
+  ]}
+>
+  <slot />
+</p>

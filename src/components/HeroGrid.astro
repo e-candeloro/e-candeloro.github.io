@@ -1,0 +1,67 @@
+---
+const greetings = [
+  {
+    text: "Ciao!",
+    className:
+      "col-span-4 rounded-[0_10rem_10rem_10rem] bg-tertiary text-tertiary max-md:col-span-2 max-md:rounded-[0_0_2rem_0]",
+  },
+  {
+    text: "Hola!",
+    className:
+      "col-span-2 rounded-[10rem_10rem_10rem_0] bg-primary max-md:col-span-1 max-md:row-span-2 max-md:rounded-[2rem_0_2rem_0]",
+  },
+  {
+    text: "Olá!",
+    className: "row-span-2 rounded-[2rem_0] bg-tertiary max-md:col-span-1 max-md:bg-primary",
+  },
+  {
+    text: "Salut!",
+    className: "col-span-2 rounded-[0_2rem_0_0] bg-secondary max-md:col-span-1",
+  },
+  {
+    text: "你好!",
+    className:
+      "rounded-[2rem_0_0_0] bg-primary max-md:col-span-2 max-md:rounded-[2rem_0_0_2rem] max-md:bg-tertiary",
+  },
+  {
+    text: "こんにちは!",
+    className:
+      "col-span-2 row-span-4 rounded-[0_4rem_0_4rem] bg-secondary max-md:col-span-3 max-md:row-span-1 max-md:rounded-[0_0_2rem_2rem]",
+  },
+  {
+    text: "أهلاً!",
+    className:
+      "rounded-[5rem_0_0_5rem] bg-primary max-md:col-span-1 max-md:row-span-1 max-md:rounded-[0_0_2rem_0]",
+  },
+  {
+    text: "Guten Tag!",
+    className:
+      "col-span-2 row-span-4 rounded-[4rem_0_0_4rem] bg-tertiary max-md:row-span-1 max-md:rounded-[2rem]",
+  },
+  {
+    text: "ПРИВЕТ!",
+    className:
+      "col-span-2 row-span-3 rounded-[0_0_4rem_0] bg-secondary max-md:row-span-1 max-md:rounded-[2rem_2rem_0_2rem]",
+  },
+  {
+    text: "नमस्ते!",
+    className:
+      "col-[5/7] rounded-[4rem_0_0_4rem] bg-primary max-md:col-span-1 max-md:col-auto max-md:row-span-1 max-md:rounded-[0_0_2rem_2rem]",
+  },
+];
+---
+
+<div class="hero-grid-container grid w-full max-w-[600px] min-w-[450px] grid-cols-[repeat(6,minmax(1rem,1fr))] grid-rows-[repeat(6,minmax(1rem,1fr))] gap-4 p-8 max-md:m-0 max-md:min-w-[200px] max-md:max-w-[450px] max-md:grid-flow-dense max-md:grid-cols-[repeat(3,minmax(0.5rem,1fr))] max-md:grid-rows-[repeat(auto-fit,minmax(0.5rem,1fr))] max-md:gap-2 max-md:p-0">
+  {
+    greetings.map((greeting) => (
+      <div
+        class:list={[
+          "hero-block flex min-h-16 min-w-12 items-center justify-center border-[3px] border-text text-[1.2rem] text-transparent transition-all duration-200 ease-in-out [font-weight:bold] [-webkit-tap-highlight-color:transparent] select-none hover:scale-[1.02] hover:rounded-none hover:bg-transparent hover:text-text [&.active]:scale-[1.02] [&.active]:rounded-none [&.active]:bg-transparent [&.active]:text-text",
+          greeting.className,
+        ]}
+      >
+        {greeting.text}
+      </div>
+    ))
+  }
+</div>

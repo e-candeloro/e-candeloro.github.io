@@ -1,0 +1,58 @@
+---
+import ButtonLink from "../ButtonLink.astro";
+import Card from "../Card.astro";
+import CardDivider from "../CardDivider.astro";
+import CardSectionTitle from "../CardSectionTitle.astro";
+import CardSubtitle from "../CardSubtitle.astro";
+import CardText from "../CardText.astro";
+import CardTitle from "../CardTitle.astro";
+import SkillTags from "../SkillTags.astro";
+
+const topicsLearned = [
+  "Machine & Deep Learning",
+  "Computer Vision",
+  "Intelligent Distributed Systems",
+  "Data Analysis",
+  "Internet of Things",
+  "Robotics",
+  "Web Development",
+  "UX/UI Design",
+  "Business Development",
+  "Lean Methodology",
+  "Business Plan",
+  "Pitching",
+];
+---
+
+<Card variant="cv-card">
+  <CardTitle>M.Sc. in Computer Engineering</CardTitle>
+  <CardSubtitle>UNIMORE | OCT 2020 - FEB. 2024</CardSubtitle>
+  <CardText>Artificial Intelligence Engineering</CardText>
+  <CardText>Final Grade: 110/110 cum laude</CardText>
+  <CardText>Thesis: Skin Lesion Classification Neural Networks Explained with Generative Adversarial Networks</CardText>
+  <ButtonLink
+    link={{
+      href: "https://docs.google.com/presentation/d/1AeH24imfGQzyaZsKTxcHP4QGQI5lRFDG/edit?usp=sharing&ouid=107269588971166995720&rtpof=true&sd=true",
+      label: "Read my Thesis Presentation",
+      ariaLabel: "link to my master thesis presentation",
+      variant: "secondary",
+    }}
+  />
+  <CardSectionTitle>Topics Learned</CardSectionTitle>
+  <SkillTags items={topicsLearned} />
+
+  <CardDivider />
+
+  <CardTitle>B.Sc. in Electronic Engineering</CardTitle>
+  <CardSubtitle>UNIMORE | OCT 2015 - APR 2020</CardSubtitle>
+  <CardText>Final Grade: 99/110</CardText>
+  <CardText>Thesis: IoT usage in Precision Agriculture</CardText>
+  <ButtonLink
+    link={{
+      href: "https://drive.google.com/file/d/1F8cTm4Fdc-PGl8b2HwOQmCvVRlhnHrVK/view?usp=sharing",
+      label: "Read my Bachelor Thesis",
+      ariaLabel: "link to my thesis",
+      variant: "secondary",
+    }}
+  />
+</Card>

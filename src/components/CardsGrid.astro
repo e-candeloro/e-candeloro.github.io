@@ -1,0 +1,14 @@
+---
+interface Props {
+  dataAos?: string;
+}
+
+const { dataAos } = Astro.props;
+---
+
+<div
+  class="cards-grid-container m-8 grid grid-cols-[repeat(1,minmax(10rem,max-content))] grid-rows-[repeat(auto-fit,minmax(10rem,1fr))] content-center justify-center gap-8 max-md:mx-4"
+  data-aos={dataAos}
+>
+  <slot />
+</div>

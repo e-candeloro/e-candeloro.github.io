@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fcfaf9;
+  --color-primary: #ffc40c;
+  --color-secondary: #009ffd;
+  --color-tertiary: #ee4266;
+  --color-text: #343434;
+
+  --font-sans: "Poppins", sans-serif;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    max-width: 70em;
+    transition: all 200ms ease-in-out;
+  }
+
+  a {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .link {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
+
+  .link:active,
+  .link:visited {
+    color: var(--color-text);
+  }
+
+  .link:hover {
+    color: var(--color-background);
+  }
+
+  .heart-secret-button {
+    transition: all 300ms ease-in-out;
+    display: inline-block;
+    animation: heartPulse 1s infinite;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .heart-secret-button:hover,
+  .heart-secret-button.in-view {
+    cursor: pointer;
+    transform: scale(1.2);
+    animation: none;
+  }
+
+  .heart-secret-button:active {
+    transform: scale(0.9);
+    transition: all 100ms ease-in-out;
+  }
+
+  .icon.tap-active {
+    color: var(--color-background) !important;
+    transform: scale(1.3) !important;
+  }
+}
+
+@keyframes heartPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.2);
+  }
+}

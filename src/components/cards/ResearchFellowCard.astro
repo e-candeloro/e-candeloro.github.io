@@ -1,0 +1,41 @@
+---
+import ButtonLink from "../ButtonLink.astro";
+import Card from "../Card.astro";
+import CardSectionTitle from "../CardSectionTitle.astro";
+import CardSubtitle from "../CardSubtitle.astro";
+import CardText from "../CardText.astro";
+import CardTitle from "../CardTitle.astro";
+import SkillTags from "../SkillTags.astro";
+
+const mainTopics = [
+  "Cancer Detection",
+  "Multi-label Classification",
+  "Deep Learning Pipelines",
+  "Image Processing",
+  "Experiment Tracking",
+  "Implementing SOTA best practices",
+  "Code refactoring",
+  "Software Engineering",
+];
+---
+
+<Card variant="cv-card">
+  <CardTitle>Research Fellow & Ph.D. student in Artificial Intelligence</CardTitle>
+  <CardSubtitle>UNIMORE | APR 2024 - ONGOING</CardSubtitle>
+  <CardText>
+    Working in the <a href="https://aimagelab.ing.unimore.it/imagelab/" class="link">AImageLab</a> research group,
+    applying artificial intelligence to medical imaging in real case scenarios, collaborating with clinicians and
+    developing proof-of-concept applications in Python and various AI and data analysis frameworks. From November 2024,
+    enrolled as Ph.D. student in AI safety.
+  </CardText>
+  <ButtonLink
+    link={{
+      href: "https://scholar.google.com/citations?user=ErCjS5IAAAAJ&hl=it",
+      label: "Publications",
+      ariaLabel: "Personal Google Scholar link",
+      variant: "secondary",
+    }}
+  />
+  <CardSectionTitle>Main Topics and Skills</CardSectionTitle>
+  <SkillTags items={mainTopics} />
+</Card>

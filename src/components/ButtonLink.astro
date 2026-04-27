@@ -1,0 +1,28 @@
+---
+import type { ButtonLink as ButtonLinkData } from "../data/site";
+
+interface Props {
+  link: ButtonLinkData;
+  className?: string;
+}
+
+const { link, className = "" } = Astro.props;
+
+const baseClasses =
+  "inline-block cursor-pointer rounded-[2rem] border-2 border-text px-4 py-2 transition-all duration-300 ease-in-out [font-weight:bold] [-webkit-tap-highlight-color:transparent] select-none active:scale-90 active:duration-100";
+
+const variantClasses = {
+  primary:
+    "button-primary mt-4 bg-secondary text-[clamp(0.5rem,4vw,1.2rem)] text-background hover:-translate-y-[0.2rem] hover:bg-background hover:text-text [&.in-view]:-translate-y-[0.2rem] [&.in-view]:bg-background [&.in-view]:text-text",
+  secondary:
+    "button-secondary mt-4 bg-text text-[clamp(0.5rem,4vw,1rem)] text-background hover:-translate-y-[0.2rem] hover:bg-background hover:text-text [&.in-view]:-translate-y-[0.2rem] [&.in-view]:bg-background [&.in-view]:text-text",
+};
+---
+
+<a
+  href={link.href}
+  aria-label={link.ariaLabel}
+  class:list={[baseClasses, variantClasses[link.variant], className]}
+>
+  {link.label}
+</a>

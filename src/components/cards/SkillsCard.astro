@@ -1,0 +1,75 @@
+---
+import Card from "../Card.astro";
+import CardDivider from "../CardDivider.astro";
+import CardSectionTitle from "../CardSectionTitle.astro";
+import CardTitle from "../CardTitle.astro";
+import SkillTags from "../SkillTags.astro";
+
+const pythonSkills = [
+  "OpenCV",
+  "PyTorch",
+  "Numpy",
+  "Pandas",
+  "Matplotlib",
+  "Scikit-Learn",
+  "Wandb",
+  "Django & DjangoREST",
+  "Flask",
+  "Gurobi Optimizer",
+];
+
+const webDevelopmentSkills = [
+  "HTML & CSS",
+  "JavaScript",
+  "React",
+  "NodeJS",
+  "Figma",
+  "UI Guidelines & Heuristics",
+  "UX Testing",
+];
+
+const otherSkills = [
+  "Git & GitHub",
+  "VS Code",
+  "C",
+  "Assembly",
+  "MATLAB",
+  "Linux OS",
+  "ROS",
+  "Adobe Premiere & Photoshop",
+];
+
+const workSkills = [
+  "Team Work",
+  "Collaborative",
+  "Client Interaction",
+  "Problem Solving",
+  "Identifying Value Creation",
+];
+
+const personalStrengths = [
+  "Curiosity",
+  "Polyhedric",
+  "Constant Learner",
+  "High Openness",
+  "Entrepreneurially-minded",
+];
+---
+
+<Card variant="cv-card">
+  <CardTitle>Technical Skills</CardTitle>
+  <CardSectionTitle>Python</CardSectionTitle>
+  <SkillTags items={pythonSkills} />
+  <CardSectionTitle>Web Development & Design</CardSectionTitle>
+  <SkillTags items={webDevelopmentSkills} />
+  <CardSectionTitle>Others</CardSectionTitle>
+  <SkillTags items={otherSkills} />
+
+  <CardDivider />
+
+  <CardTitle>Soft Skills</CardTitle>
+  <CardSectionTitle>Work and Group</CardSectionTitle>
+  <SkillTags items={workSkills} />
+  <CardSectionTitle>Personal Strengths</CardSectionTitle>
+  <SkillTags items={personalStrengths} />
+</Card>
