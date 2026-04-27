@@ -11,7 +11,7 @@ export type CardVariant = "project-1" | "project-2" | "cv-card" | "contact-card"
 
 export const siteMeta = {
   title: "Ettore Candeloro",
-  description: "Hello I'm Ettore, a developer. I like to build things.",
+  description: "Hello I'm Ettore, an AI Engineer Researcher. I like to build things.",
 };
 
 export const navLinks: Array<{
