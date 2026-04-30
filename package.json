@@ -16,8 +16,12 @@
     "@fontsource/poppins": "^5.2.7",
     "@tailwindcss/vite": "^4.2.4",
     "aos": "^2.3.4",
-    "astro": "^6.1.9",
+    "astro": "^6.2.0",
+    "katex": "^0.16.45",
     "party-js": "^2.2.0",
+    "rehype-katex": "^7.0.1",
+    "remark-github-blockquote-alert": "^2.1.0",
+    "remark-math": "^6.0.0",
     "tailwindcss": "^4.2.4"
   }
 }

@@ -1,3 +1,16 @@
-<p class="card-subtitle mb-2 text-base text-text [font-weight:bold] [line-height:normal] group-hover/card:text-background group-[.in-view]/card:text-background">
+---
+interface Props {
+  invertOnHover?: boolean;
+}
+
+const { invertOnHover = true } = Astro.props;
+---
+
+<p
+  class:list={[
+    "card-subtitle mb-2 text-base text-text [font-weight:bold] [line-height:normal]",
+    invertOnHover && "group-hover/card:text-background group-[.in-view]/card:text-background",
+  ]}
+>
   <slot />
 </p>

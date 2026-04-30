@@ -1,0 +1,75 @@
+---
+import { getCollection } from "astro:content";
+import ButtonLink from "../../components/ButtonLink.astro";
+import Card from "../../components/Card.astro";
+import CardSubtitle from "../../components/CardSubtitle.astro";
+import CardText from "../../components/CardText.astro";
+import CardTitle from "../../components/CardTitle.astro";
+import CardsGrid from "../../components/CardsGrid.astro";
+import Footer from "../../components/Footer.astro";
+import Nav from "../../components/Nav.astro";
+import Section from "../../components/Section.astro";
+import SectionTitle from "../../components/SectionTitle.astro";
+import SkillTags from "../../components/SkillTags.astro";
+import { footer, navLinks, siteMeta } from "../../data/site";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = (await getCollection("blog", ({ data }) => data.draft !== true)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const dateFormatter = new Intl.DateTimeFormat("en", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
+
+const blogCardVariants = {
+  text: "blog-text",
+  primary: "blog-primary",
+  secondary: "blog-secondary",
+  tertiary: "blog-tertiary",
+} as const;
+---
+
+<Layout title={`Blog | ${siteMeta.title}`} description="Notes and articles by Ettore Candeloro.">
+  <Section id="blog" className="min-h-screen">
+    <Nav links={navLinks} />
+
+    <main>
+      <SectionTitle title="Blog" accent="primary" />
+
+      <CardsGrid dataAos="fade-up">
+        {
+          posts.length > 0 ? (
+            posts.map((post) => (
+              <Card variant={blogCardVariants[post.data.titleColor]}>
+                <CardTitle color={post.data.titleColor} invertOnHover={post.data.titleColor !== "text"}>{post.data.title}</CardTitle>
+                <CardSubtitle invertOnHover={post.data.titleColor !== "text"}>{dateFormatter.format(post.data.pubDate)}</CardSubtitle>
+                <CardText invertOnHover={post.data.titleColor !== "text"}>{post.data.description}</CardText>
+                {post.data.tags.length > 0 && <SkillTags items={post.data.tags} invertOnHover={post.data.titleColor !== "text"} />}
+                <ButtonLink
+                  link={{
+                    href: `/blog/${post.id}/`,
+                    label: "Read Article",
+                    ariaLabel: `Read ${post.data.title}`,
+                    variant: "secondary",
+                  }}
+                />
+              </Card>
+            ))
+          ) : (
+            <Card variant="project-1">
+              <CardTitle>No posts yet</CardTitle>
+              <CardText>Published articles will appear here.</CardText>
+            </Card>
+          )
+        }
+      </CardsGrid>
+    </main>
+
+    <Footer textBeforeHeart={footer.textBeforeHeart} textAfterHeart={footer.textAfterHeart} />
+  </Section>
+
+  <script src="../../scripts/home.js"></script>
+</Layout>

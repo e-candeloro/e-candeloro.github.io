@@ -1,4 +1,5 @@
 export type Accent = "primary" | "secondary" | "tertiary";
+export type PaletteColor = Accent | "text";
 
 export type ButtonLink = {
   href: string;
@@ -7,7 +8,12 @@ export type ButtonLink = {
   variant: "primary" | "secondary";
 };
 
-export type CardVariant = "project-1" | "project-2" | "cv-card" | "contact-card";
+export type CardVariant =
+  | "project-1"
+  | "project-2"
+  | "cv-card"
+  | "contact-card"
+  | `blog-${PaletteColor}`;
 
 export const siteMeta = {
   title: "Ettore Candeloro",
@@ -21,22 +27,28 @@ export const navLinks: Array<{
   accent: Accent;
 }> = [
   {
-    href: "#projects",
+    href: "/#projects",
     label: "Projects",
     ariaLabel: "link to scroll down to my projects section",
     accent: "primary",
   },
   {
-    href: "#curriculum",
+    href: "/#curriculum",
     label: "Curriculum",
     ariaLabel: "link to scroll down to my curriculum section",
     accent: "secondary",
   },
   {
-    href: "#contactme",
+    href: "/#contactme",
     label: "Contact Me",
     ariaLabel: "link to scroll down to the contact me section",
     accent: "tertiary",
+  },
+  {
+    href: "/blog/",
+    label: "Blog",
+    ariaLabel: "link to my blog articles",
+    accent: "primary",
   },
 ];
 
