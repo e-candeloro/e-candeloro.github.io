@@ -103,6 +103,154 @@
     color: var(--color-background) !important;
     transform: scale(1.3) !important;
   }
+
+  .markdown-content > * + * {
+    margin-top: 1rem;
+  }
+
+  .markdown-content h1,
+  .markdown-content h2,
+  .markdown-content h3,
+  .markdown-content h4,
+  .markdown-content h5,
+  .markdown-content h6 {
+    margin-top: 2rem;
+    color: var(--color-text);
+    font-weight: bold;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .markdown-content h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .markdown-content h2 {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+
+  .markdown-content h3 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+
+  .markdown-content h4,
+  .markdown-content h5,
+  .markdown-content h6 {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+  }
+
+  .markdown-content p,
+  .markdown-content li,
+  .markdown-content td,
+  .markdown-content th {
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    line-height: 1.5;
+  }
+
+  .markdown-content a {
+    text-decoration: underline;
+  }
+
+  .markdown-content a:hover {
+    color: var(--color-secondary);
+  }
+
+  .markdown-content ul,
+  .markdown-content ol {
+    padding-left: 1.5rem;
+  }
+
+  .markdown-content ul {
+    list-style: disc;
+  }
+
+  .markdown-content ol {
+    list-style: decimal;
+  }
+
+  .markdown-content li + li {
+    margin-top: 0.35rem;
+  }
+
+  .markdown-content input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--color-secondary);
+  }
+
+  .markdown-content blockquote {
+    border-left: 0.35rem solid var(--color-secondary);
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+
+  .markdown-content :not(pre) > code {
+    border: 1px solid var(--color-text);
+    border-radius: 0.5rem;
+    background: #f2f2f2;
+    padding: 0.05rem 0.35rem;
+    color: var(--color-text);
+    font-size: 0.9em;
+    line-height: 1.15;
+    position: relative;
+    top: -0.04em;
+  }
+
+  .markdown-content pre {
+    overflow-x: auto;
+    border: 2px solid var(--color-text);
+    border-radius: 1rem;
+    background: #f2f2f2 !important;
+    padding: 1rem;
+  }
+
+  .markdown-content .astro-code,
+  .markdown-content .astro-code span {
+    background-color: #f2f2f2 !important;
+  }
+
+  .markdown-content pre code {
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+
+  .markdown-content img {
+    margin-inline: auto;
+    max-width: 100%;
+    border: 2px solid var(--color-text);
+    border-radius: 1rem;
+  }
+
+  .markdown-content table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+
+  .markdown-content th,
+  .markdown-content td {
+    border: 2px solid var(--color-text);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+
+  .markdown-content th {
+    background: #f2f2f2;
+  }
+
+  .markdown-content .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.5rem 0;
+  }
+
+  .markdown-content .markdown-alert-title {
+    font-weight: bold;
+  }
+
+  .markdown-content hr {
+    border: 0;
+    border-top: 2px solid var(--color-text);
+  }
 }
 
 @keyframes heartPulse {
