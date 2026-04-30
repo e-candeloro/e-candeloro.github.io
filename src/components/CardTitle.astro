@@ -1,3 +1,27 @@
-<h3 class="card-title mx-4 mb-[0.3rem] mt-2 text-[clamp(1.2rem,5vw,1.5rem)] text-text [font-weight:bold] [line-height:normal] group-hover/card:text-background group-[.in-view]/card:text-background">
+---
+import type { PaletteColor } from "../data/site";
+
+interface Props {
+  color?: PaletteColor;
+  invertOnHover?: boolean;
+}
+
+const { color = "text", invertOnHover = true } = Astro.props;
+
+const colorClasses: Record<PaletteColor, string> = {
+  text: "text-text",
+  primary: "text-primary",
+  secondary: "text-secondary",
+  tertiary: "text-tertiary",
+};
+---
+
+<h3
+  class:list={[
+    "card-title mx-4 mb-[0.3rem] mt-2 text-[clamp(1.2rem,5vw,1.5rem)] [font-weight:bold] [line-height:normal]",
+    colorClasses[color],
+    invertOnHover && "group-hover/card:text-background group-[.in-view]/card:text-background",
+  ]}
+>
   <slot />
 </h3>

@@ -1,15 +1,23 @@
 ---
 interface Props {
   items: string[];
+  invertOnHover?: boolean;
+  fillOnHover?: boolean;
 }
 
-const { items } = Astro.props;
+const { items, invertOnHover = true, fillOnHover = false } = Astro.props;
 ---
 
 <div class="skills-container mx-4 my-2 flex flex-row flex-wrap items-center justify-center gap-x-1.5 gap-y-1.5 text-center">
   {
     items.map((item) => (
-      <span class="skill-tag inline-block rounded-[2rem] border-2 border-text bg-transparent px-4 py-2 text-base text-text transition-all duration-300 ease-in-out [-webkit-tap-highlight-color:transparent] select-none active:scale-90 active:duration-100 group-hover/card:bg-text group-hover/card:text-background group-[.in-view]/card:bg-text group-[.in-view]/card:text-background hover:-translate-y-[0.2rem] hover:border-text hover:bg-background hover:text-text hover:[font-weight:bold] max-md:px-2.5 max-md:py-1 max-md:text-[clamp(0.9rem,5vw,1rem)]">
+      <span
+        class:list={[
+          "skill-tag inline-block rounded-[2rem] border-2 border-text bg-transparent px-4 py-2 text-base text-text transition-all duration-300 ease-in-out [-webkit-tap-highlight-color:transparent] select-none active:scale-90 active:duration-100 hover:-translate-y-[0.2rem] hover:border-text hover:[font-weight:bold] max-md:px-2.5 max-md:py-1 max-md:text-[clamp(0.9rem,5vw,1rem)]",
+          fillOnHover ? "hover:bg-text hover:text-background" : "hover:bg-background hover:text-text",
+          invertOnHover && "group-hover/card:bg-text group-hover/card:text-background group-[.in-view]/card:bg-text group-[.in-view]/card:text-background",
+        ]}
+      >
         {item}
       </span>
     ))

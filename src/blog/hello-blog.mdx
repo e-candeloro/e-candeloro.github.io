@@ -1,0 +1,116 @@
+---
+title: "Hello Blog"
+description: "A small first note to test the new MDX blog setup."
+pubDate: 2026-04-30
+tags: ["astro", "website", "notes"]
+draft: true
+titleColor: "primary"
+---
+
+This is the first example post for the new blog section.
+
+The goal is intentionally simple: keep the writing close to the rest of the website, use the existing visual language, and make future posts easy to add with MDX. This paragraph also includes `inline code` to check how short technical terms look inside body copy.
+
+## Heading level two
+
+This section checks standard paragraph rhythm after a second-level heading.
+
+### Heading level three
+
+This section checks a smaller heading and a regular paragraph below it.
+
+#### Heading level four
+
+This section checks another heading level without adding special components.
+
+## Lists
+
+- A normal bullet item.
+- A second bullet item with **bold text**.
+- A third bullet item with _italic text_.
+- A fourth bullet item with ~~strikethrough text~~.
+
+1. A numbered item.
+2. Another numbered item.
+3. A final numbered item.
+
+- [x] A completed checkbox item.
+- [ ] An open checkbox item.
+
+## Table
+
+| Feature | Expected default behavior |
+| --- | --- |
+| GFM table | Renders as a table |
+| Checkbox | Renders as a task list input |
+| Callout syntax | Renders with the callout plugin |
+
+---
+
+## Quote and callout
+
+> This is a plain Markdown quote. For now, callouts can be written as normal blockquotes without adding a plugin or custom component.
+
+> [!NOTE]
+> Useful information that should stand out while keeping the article readable.
+
+> [!TIP]
+> Helpful advice for doing something more easily.
+
+> [!IMPORTANT]
+> Key information readers should not miss.
+
+> [!WARNING]
+> Information that needs attention before proceeding.
+
+> [!CAUTION]
+> Risky or negative outcomes to avoid.
+
+## Code
+
+Inline code should stay compact, like `npm run build` or `draft: true`.
+
+```ts
+const post = {
+  title: "Hello Blog",
+  draft: false,
+  titleColor: "text",
+};
+
+console.log(post.title);
+```
+
+## Link and image
+
+Here is a normal link to the [Astro website](https://astro.build/).
+
+![Website placeholder](https://placehold.co/800x400/f2f2f2/343434?text=Website+Placeholder)
+
+## Equation text
+
+Inline math now renders with KaTeX: $E = mc^2$.
+
+Display math also renders with KaTeX:
+
+$$
+\int_0^1 x^2 dx = \frac{1}{3}
+$$
+
+## What this enables
+
+You can now add a new `.mdx` file under `src/blog/` with frontmatter like this:
+
+```mdx
+---
+title: "My New Post"
+description: "A short description for the blog list and meta tag."
+pubDate: 2026-04-30
+tags: ["research", "engineering"]
+draft: false
+titleColor: "text"
+---
+
+Your post content goes here.
+```
+
+Set `draft: true` when a post should stay hidden from the blog list and from generated pages.
