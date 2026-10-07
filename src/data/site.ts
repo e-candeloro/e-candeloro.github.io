@@ -17,7 +17,8 @@ export type CardVariant =
 
 export const siteMeta = {
   title: "Ettore Candeloro",
-  description: "Hello I'm Ettore, an AI Engineer Researcher. I like to build things.",
+  description:
+    "Hello, I'm Ettore: freelance consultant in AI, Automation and Data Analysis, and Ph.D. researcher in AI for Medical Imaging.",
 };
 
 export const navLinks: Array<{
@@ -55,8 +56,11 @@ export const navLinks: Array<{
 export const hero = {
   titlePrefix: "Hello, I'm",
   titleAccent: "Ettore",
-  subtitlePrefix: "I like to build",
-  subtitleAccent: "things",
+  subtitlePrefix: "I like to",
+  // The first verb is the static/no-JS one; home.js rotates through the rest.
+  subtitleVerbs: ["build", "break", "study", "discover", "research", "automate", "analyze", "explore", "fix"],
+  subtitleSuffix: "things",
+  tagline: "Freelancer in AI, Automation & Data Analysis. Ph.D. researcher in AI for Medical Imaging.",
   cta: {
     href: "#projects",
     label: "See my Projects",

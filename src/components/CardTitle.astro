@@ -20,7 +20,8 @@ const colorClasses: Record<PaletteColor, string> = {
   class:list={[
     "card-title mx-4 mb-[0.3rem] mt-2 text-[clamp(1.2rem,5vw,1.5rem)] [font-weight:bold] [line-height:normal]",
     colorClasses[color],
-    invertOnHover && "group-hover/card:text-background group-[.in-view]/card:text-background",
+    invertOnHover && "group-hover/card:text-background",
+    "group-[.in-view]/card:text-(--card-accent)",
   ]}
 >
   <slot />

@@ -17,6 +17,9 @@ import StartupProgramsCard from "../components/cards/StartupProgramsCard.astro";
 import TechnicalPortfolioCard from "../components/cards/TechnicalPortfolioCard.astro";
 import { footer, hero, navLinks, siteMeta } from "../data/site";
 import Layout from "../layouts/Layout.astro";
+
+// Rotating hero verbs cycle through the palette, starting with the original "things" pink.
+const verbAccentClasses = ["text-tertiary", "text-secondary", "text-primary"];
 ---
 
 <Layout title={siteMeta.title} description={siteMeta.description}>
@@ -29,8 +32,22 @@ import Layout from "../layouts/Layout.astro";
           {hero.titlePrefix} <span class="text-primary">{hero.titleAccent}</span>
         </h1>
         <h2 class="text-[clamp(0.5rem,5vw,1.5rem)] [font-weight:bold] [line-height:normal]">
-          {hero.subtitlePrefix} <span class="text-tertiary">{hero.subtitleAccent}</span>
+          <span class="sr-only">{hero.subtitlePrefix} {hero.subtitleVerbs[0]} {hero.subtitleSuffix}</span>
+          <span aria-hidden="true">{hero.subtitlePrefix} <span class="hero-verbs inline-grid justify-items-start overflow-x-clip whitespace-nowrap transition-[width] duration-300 ease-in-out motion-reduce:transition-none">{
+            hero.subtitleVerbs.map((verb, index) => (
+              <span
+                class:list={[
+                  "hero-verb col-start-1 row-start-1 opacity-0 transition-opacity duration-200 [&.active]:animate-word-in [&.active]:opacity-100 motion-reduce:[&.active]:animate-none",
+                  verbAccentClasses[index % verbAccentClasses.length],
+                  { active: index === 0 },
+                ]}
+              >
+                {verb}
+              </span>
+            ))
+          }</span> {hero.subtitleSuffix}</span>
         </h2>
+        <p class="mt-2 max-w-[30rem] text-[clamp(0.9rem,4vw,1.1rem)] [text-wrap:balance]">{hero.tagline}</p>
         <ButtonLink link={hero.cta} />
       </div>
 
@@ -44,9 +61,9 @@ import Layout from "../layouts/Layout.astro";
     <SectionTitle title="Projects" accent="primary" />
 
     <CardsGrid dataAos="fade-up">
+      <FreelancerConsultantCard />
       <TechnicalPortfolioCard />
       <BrainXCard />
-      <FreelancerConsultantCard />
       <StartupProgramsCard />
     </CardsGrid>
 

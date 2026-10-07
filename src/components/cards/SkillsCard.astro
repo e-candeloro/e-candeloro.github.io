@@ -5,17 +5,29 @@ import CardSectionTitle from "../CardSectionTitle.astro";
 import CardTitle from "../CardTitle.astro";
 import SkillTags from "../SkillTags.astro";
 
-const pythonSkills = [
-  "OpenCV",
+const aiDataSkills = [
   "PyTorch",
+  "Scikit-Learn",
+  "OpenCV",
   "Numpy",
   "Pandas",
   "Matplotlib",
-  "Scikit-Learn",
   "Wandb",
-  "Django & DjangoREST",
-  "Flask",
   "Gurobi Optimizer",
+];
+
+const automationSkills = ["LLM APIs & Agents", "n8n", "Dashboards & Streamlit"];
+
+const devopsSkills = [
+  "Docker",
+  "Docker Compose",
+  "GitHub Actions (CI/CD)",
+  "Traefik",
+  "Tailscale",
+  "Uptime Kuma",
+  "Linux Servers",
+  "Homelab & Self-hosting",
+  "SLURM & HPC",
 ];
 
 const webDevelopmentSkills = [
@@ -23,21 +35,16 @@ const webDevelopmentSkills = [
   "JavaScript",
   "React",
   "NodeJS",
+  "Astro",
+  "Tailwind CSS",
+  "Django & DjangoREST",
+  "Flask",
+  "UX/UI Design",
   "Figma",
-  "UI Guidelines & Heuristics",
   "UX Testing",
 ];
 
-const otherSkills = [
-  "Git & GitHub",
-  "VS Code",
-  "C",
-  "Assembly",
-  "MATLAB",
-  "Linux OS",
-  "ROS",
-  "Adobe Premiere & Photoshop",
-];
+const otherSkills = ["Git & GitHub", "C", "Assembly", "MATLAB", "ROS"];
 
 const workSkills = [
   "Team Work",
@@ -58,8 +65,12 @@ const personalStrengths = [
 
 <Card variant="cv-card">
   <CardTitle>Technical Skills</CardTitle>
-  <CardSectionTitle>Python</CardSectionTitle>
-  <SkillTags items={pythonSkills} />
+  <CardSectionTitle>AI & Data Science</CardSectionTitle>
+  <SkillTags items={aiDataSkills} />
+  <CardSectionTitle>Automation & LLMs</CardSectionTitle>
+  <SkillTags items={automationSkills} />
+  <CardSectionTitle>DevOps & Infrastructure</CardSectionTitle>
+  <SkillTags items={devopsSkills} />
   <CardSectionTitle>Web Development & Design</CardSectionTitle>
   <SkillTags items={webDevelopmentSkills} />
   <CardSectionTitle>Others</CardSectionTitle>

@@ -10,7 +10,7 @@ const { contact = false, invertOnHover = true } = Astro.props;
 <p
   class:list={[
     "card-text px-4 py-2 text-center text-[clamp(1rem,5vw,1.2rem)] leading-6 text-text max-md:px-2",
-    invertOnHover && "group-hover/card:text-background group-[.in-view]/card:text-background",
+    invertOnHover && "group-hover/card:text-background",
     contact && "text-[1.2rem] leading-[1.5]",
   ]}
 >

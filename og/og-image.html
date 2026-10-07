@@ -1,0 +1,172 @@
+<!doctype html>
+<!--
+  Source for public/og-image.png (1200x630 social preview).
+  Render it by opening this file at a 1200x630 viewport and screenshotting the page
+  (see README "Social preview image").
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OG image</title>
+    <style>
+      @font-face {
+        font-family: "Poppins";
+        font-weight: 400;
+        src: url("../node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2") format("woff2");
+      }
+
+      :root {
+        --background: #fcfaf9;
+        --primary: #ffc40c;
+        --secondary: #009ffd;
+        --tertiary: #ee4266;
+        --text: #343434;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+
+      body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        padding: 0 72px 56px;
+        background: var(--background);
+        color: var(--text);
+        font-family: "Poppins", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Mirrors the desktop hero grid in src/components/HeroGrid.astro. */
+      .grid {
+        display: grid;
+        flex: none;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 14px;
+        width: 440px;
+        height: 440px;
+      }
+
+      .tile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid var(--text);
+        font-size: 30px;
+        font-weight: bold;
+        color: transparent;
+      }
+
+      .tile.active {
+        background: transparent !important;
+        border-radius: 0 !important;
+        color: var(--text);
+      }
+
+      .bg-primary { background: var(--primary); }
+      .bg-secondary { background: var(--secondary); }
+      .bg-tertiary { background: var(--tertiary); }
+
+      .copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        font-size: 84px;
+        font-weight: bold;
+        line-height: 1.05;
+        letter-spacing: -1px;
+      }
+
+      h2 {
+        margin-top: 14px;
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .tag {
+        border: 3px solid var(--text);
+        border-radius: 2rem;
+        padding: 8px 22px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .tag.bg-secondary,
+      .tag.bg-tertiary {
+        color: var(--background);
+      }
+
+      .research {
+        margin-top: 22px;
+        font-size: 24px;
+        text-wrap: balance;
+      }
+
+      .text-primary { color: var(--primary); }
+      .text-tertiary { color: var(--tertiary); }
+
+      footer {
+        position: absolute;
+        inset: auto 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        background: var(--primary);
+        color: var(--text);
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid" aria-hidden="true">
+      <div class="tile active" style="grid-column: span 4">Ciao!</div>
+      <div class="tile bg-primary" style="grid-column: span 2; border-radius: 10rem 10rem 10rem 0"></div>
+      <div class="tile bg-tertiary" style="grid-row: span 2; border-radius: 2rem 0"></div>
+      <div class="tile bg-secondary" style="grid-column: span 2; border-radius: 0 2rem 0 0"></div>
+      <div class="tile bg-primary" style="border-radius: 2rem 0 0 0"></div>
+      <div class="tile bg-secondary" style="grid-column: span 2; grid-row: span 4; border-radius: 0 4rem 0 4rem"></div>
+      <div class="tile bg-primary" style="border-radius: 5rem 0 0 5rem"></div>
+      <div class="tile bg-tertiary" style="grid-column: span 2; grid-row: span 4; border-radius: 4rem 0 0 4rem"></div>
+      <div class="tile bg-secondary" style="grid-column: span 2; grid-row: span 3; border-radius: 0 0 4rem 0"></div>
+      <div class="tile bg-primary" style="grid-column: 5 / 7; border-radius: 4rem 0 0 4rem"></div>
+    </div>
+
+    <div class="copy">
+      <h1>Hello, I'm <span class="text-primary">Ettore</span></h1>
+      <h2>I like to <span class="text-tertiary">build</span> things</h2>
+      <div class="tags">
+        <span class="tag bg-tertiary">AI</span>
+        <span class="tag bg-secondary">Automation</span>
+        <span class="tag bg-primary">Data Analysis</span>
+      </div>
+      <p class="research">Freelancer &amp; Ph.D. researcher in AI for Medical Imaging</p>
+    </div>
+
+    <footer>ettorecandeloro.me</footer>
+  </body>
+</html>
