@@ -3,7 +3,12 @@ import { confetti, variation } from "party-js";
 
 AOS.init();
 
-const heroBlocks = document.querySelectorAll(".hero-block");
+function randomItemExcept(items, current) {
+  const candidates = items.filter((item) => item !== current);
+  return candidates[Math.floor(Math.random() * candidates.length)];
+}
+
+const heroBlocks = [...document.querySelectorAll(".hero-block")];
 let previousBlock = null;
 
 function highlightRandomBlock() {
@@ -11,14 +16,40 @@ function highlightRandomBlock() {
 
   previousBlock?.classList.remove("active");
 
-  const randomIndex = Math.floor(Math.random() * heroBlocks.length);
-  const currentBlock = heroBlocks[randomIndex];
+  const currentBlock = randomItemExcept(heroBlocks, previousBlock);
   currentBlock.classList.add("active");
   previousBlock = currentBlock;
 }
 
+const heroVerbs = document.querySelector(".hero-verbs");
+const verbs = heroVerbs ? [...heroVerbs.querySelectorAll(".hero-verb")] : [];
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let activeVerb = verbs.find((verb) => verb.classList.contains("active"));
+
+// The verbs are stacked in one grid cell; shrink the cell to the active word so "things" follows it.
+function fitVerbs() {
+  if (heroVerbs && activeVerb) heroVerbs.style.width = `${activeVerb.offsetWidth}px`;
+}
+
+function showRandomVerb() {
+  if (verbs.length < 2 || prefersReducedMotion) return;
+
+  activeVerb.classList.remove("active");
+  activeVerb = randomItemExcept(verbs, activeVerb);
+  activeVerb.classList.add("active");
+  fitVerbs();
+}
+
 highlightRandomBlock();
-window.setInterval(highlightRandomBlock, Math.random() * 1000 + 1500);
+fitVerbs();
+document.fonts?.ready.then(fitVerbs);
+window.addEventListener("resize", fitVerbs);
+
+// Hero tiles and verbs share one tick so they switch together.
+window.setInterval(() => {
+  highlightRandomBlock();
+  showRandomVerb();
+}, Math.random() * 1000 + 1500);
 
 const prefersTouchInteraction =
   window.matchMedia("(hover: none)").matches || window.matchMedia("(pointer: coarse)").matches;

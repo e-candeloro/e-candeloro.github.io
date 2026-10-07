@@ -1,15 +1,41 @@
 ---
+import ButtonLink from "../ButtonLink.astro";
 import Card from "../Card.astro";
+import CardSectionTitle from "../CardSectionTitle.astro";
 import CardSubtitle from "../CardSubtitle.astro";
 import CardText from "../CardText.astro";
 import CardTitle from "../CardTitle.astro";
+import SkillTags from "../SkillTags.astro";
+
+const services = [
+  "Artificial Intelligence",
+  "Process Automation",
+  "Data Analysis",
+  "Machine & Deep Learning",
+  "Computer Vision",
+  "Industrial Data",
+];
 ---
 
 <Card variant="project-1">
-  <CardTitle>Freelancer and Consultant</CardTitle>
+  <CardTitle>Freelancer in AI, Automation & Data Analysis</CardTitle>
   <CardSubtitle>E.R. region | DEC 2023 - Present</CardSubtitle>
   <CardText>
-    Freelance collaborator with <a href="https://www.fondazionerei.it/" class="link">Fondazione REI</a>, assisting
-    companies in analyzing industrial data and developing AI models to enhance production efficiency.
+    I help companies make use of their data and save time on repetitive work: analyzing business and industrial data,
+    automating processes, and building AI models designed around real needs.
   </CardText>
+  <CardText>
+    Among my collaborations, I work with <a href="https://www.fondazionerei.it/" class="link">Fondazione REI</a>,
+    supporting companies in analyzing industrial data and developing AI models to improve production efficiency.
+  </CardText>
+  <CardSectionTitle>What I Do</CardSectionTitle>
+  <SkillTags items={services} />
+  <ButtonLink
+    link={{
+      href: "#contactme",
+      label: "Work with me",
+      ariaLabel: "link to scroll down to the contact me section",
+      variant: "secondary",
+    }}
+  />
 </Card>

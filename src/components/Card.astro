@@ -7,23 +7,25 @@ interface Props {
 
 const { variant } = Astro.props;
 
+// Hover-capable devices fill the card with its accent and invert its content; touch devices
+// (`.in-view`, set on tap in home.js) only tint the CardTitle with `--card-accent`.
 const variantClasses: Record<CardVariant, string> = {
   "project-1":
-    "project-1 rounded-[2rem_0_2rem_0] hover:-translate-y-2 hover:rounded-none hover:bg-primary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none [&.in-view]:bg-primary",
+    "project-1 rounded-[2rem_0_2rem_0] [--card-accent:var(--color-primary)] hover:-translate-y-2 hover:rounded-none hover:bg-primary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none",
   "project-2":
-    "project-2 rounded-[0_2rem_0_2rem] hover:-translate-y-2 hover:rounded-none hover:bg-primary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none [&.in-view]:bg-primary",
+    "project-2 rounded-[0_2rem_0_2rem] [--card-accent:var(--color-primary)] hover:-translate-y-2 hover:rounded-none hover:bg-primary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none",
   "cv-card":
-    "cv-card hover:-translate-y-2 hover:rounded-[1rem] hover:bg-secondary [&.in-view]:-translate-y-2 [&.in-view]:rounded-[1rem] [&.in-view]:bg-secondary",
+    "cv-card [--card-accent:var(--color-secondary)] hover:-translate-y-2 hover:rounded-[1rem] hover:bg-secondary [&.in-view]:-translate-y-2 [&.in-view]:rounded-[1rem]",
   "contact-card":
-    "contact-card rounded-[0_0_2rem_2rem] hover:-translate-y-2 hover:scale-105 hover:rounded-[2rem] hover:bg-tertiary [&.in-view]:-translate-y-2 [&.in-view]:scale-105 [&.in-view]:rounded-[2rem] [&.in-view]:bg-tertiary",
+    "contact-card rounded-[0_0_2rem_2rem] [--card-accent:var(--color-tertiary)] hover:-translate-y-2 hover:scale-105 hover:rounded-[2rem] hover:bg-tertiary [&.in-view]:-translate-y-2 [&.in-view]:scale-105 [&.in-view]:rounded-[2rem]",
   "blog-text":
-    "blog-card rounded-[2rem_0_2rem_0] hover:-translate-y-2 hover:rounded-none [&.in-view]:-translate-y-2 [&.in-view]:rounded-none",
+    "blog-card rounded-[2rem_0_2rem_0] [--card-accent:var(--color-text)] hover:-translate-y-2 hover:rounded-none [&.in-view]:-translate-y-2 [&.in-view]:rounded-none",
   "blog-primary":
-    "blog-card rounded-[2rem_0_2rem_0] hover:-translate-y-2 hover:rounded-none hover:bg-primary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none [&.in-view]:bg-primary",
+    "blog-card rounded-[2rem_0_2rem_0] [--card-accent:var(--color-primary)] hover:-translate-y-2 hover:rounded-none hover:bg-primary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none",
   "blog-secondary":
-    "blog-card rounded-[2rem_0_2rem_0] hover:-translate-y-2 hover:rounded-none hover:bg-secondary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none [&.in-view]:bg-secondary",
+    "blog-card rounded-[2rem_0_2rem_0] [--card-accent:var(--color-secondary)] hover:-translate-y-2 hover:rounded-none hover:bg-secondary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none",
   "blog-tertiary":
-    "blog-card rounded-[2rem_0_2rem_0] hover:-translate-y-2 hover:rounded-none hover:bg-tertiary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none [&.in-view]:bg-tertiary",
+    "blog-card rounded-[2rem_0_2rem_0] [--card-accent:var(--color-tertiary)] hover:-translate-y-2 hover:rounded-none hover:bg-tertiary [&.in-view]:-translate-y-2 [&.in-view]:rounded-none",
 };
 ---
 
