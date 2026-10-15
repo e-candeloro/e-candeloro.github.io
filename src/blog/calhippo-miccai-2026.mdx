@@ -1,0 +1,77 @@
+---
+title: "CALHippo: Mapping 35 Million Cells in the Human Hippocampus"
+description: "How we used a handful of high-resolution brain sections to build a cell-type-resolved 3D map of the human hippocampus, presented at MICCAI 2026."
+pubDate: 2026-10-15
+tags: ["research", "MICCAI", "medical imaging", "deep learning"]
+draft: false
+titleColor: "secondary"
+---
+
+At [MICCAI 2026](https://conferences.miccai.org/2026/) in Strasbourg we presented **CALHippo** (Cellular Annotation Library for the Hippocampus): a dataset, a pipeline, and a 3D cell map of the human hippocampus. Here is the short version of how it came together.
+
+## How it started
+
+In 2025, [Giovanni Casari](https://aimagelab.unimore.it/publications/?author=gcasari) was working on whole-slide images from [BigBrain](https://bigbrainproject.org/), a 3D reconstruction of an entire human brain built from thousands of histological sections. Daniela Gandolfi and Jonathan Mapelli, who build computational models of the hippocampus, asked us a simple question: *now that new high-resolution scans are available, can we build a better low-resolution map of the hippocampus cells, so that circuit simulations start from more realistic data?*
+
+That question became a year of work and a MICCAI paper, which Giovanni and I co-first-authored with Daniela Gandolfi, Jonathan Mapelli, Federico Bolelli, and Costantino Grana.
+
+## The problem: which cells, and where?
+
+The hippocampus is a small, seahorse-shaped structure deep in the temporal lobe. It is central to forming new memories and to spatial navigation, and it is one of the first regions damaged in Alzheimer's disease. Its core, the *Cornu Ammonis*, is split into four subfields (CA1 to CA4), each with its own cellular organization.
+
+To simulate how it works, computational neuroscientists build *scaffold* models: they place every cell in 3D space and connect them according to known wiring rules. A simulation built this way is only as good as the map underneath it, so you need to know how many cells of each type there are, and where: **excitatory neurons**, **inhibitory interneurons**, and **glial cells**.
+
+The only BigBrain-based hippocampus scaffold so far ([Gandolfi et al., 2023](https://doi.org/10.1038/s43588-023-00417-2)) covered CA1 only, inferred cells from image intensity, and did not model glia.
+
+## The intuition: count cells like a crowd
+
+BigBrain comes at two resolutions, and neither is enough on its own:
+
+- **Low resolution (LR), 20 µm/px**: covers the whole volume (2,022 sections for the right hippocampus), but a neuron body is about one pixel wide, so you can't segment single cells.
+- **High resolution (HR), 1 µm/px**: single cells are clearly visible, but only 24 sections were rescanned.
+
+The idea came from **crowd counting**. In a photo of a packed stadium you can't draw a box around every head, so crowd-counting models predict a *density map*: each pixel holds the expected number of people there, and summing the map gives the total count ([survey](https://doi.org/10.1007/s44336-024-00011-8)). A blurry 20 µm section of the hippocampus is the same problem, with neurons in place of people.
+
+So HR provides the supervision and LR does the counting:
+
+1. **Segment and classify in HR.** We started from Cellpose-SAM, had experts correct its masks over several human-in-the-loop rounds, and ensembled it with StarDist, HoverNet, and InstanSeg. Each cell is then labelled excitatory, inhibitory, or glial. The result is the first expert-validated, three-class cell dataset spanning all of CA1–CA4.
+2. **Project to LR.** Cell centroids are registered into the 20 µm space and each one becomes a small Gaussian whose width adapts to the local cell density. These maps become the training targets.
+3. **Train a density U-Net.** A compact U-Net predicts one density map per cell class, with a loss that keeps regional counts correct without flattening the dense peaks.
+4. **Infer, sample, stack.** We run the model on every LR section, sample discrete cell positions from each density map, and stack the slices in BigBrain space to get a 3D point cloud.
+
+## Pipeline and results
+
+The video walks through the whole pipeline, from a single HR section to the 3D reconstruction of each CA subfield :)
+
+<video
+  controls
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  width="720"
+  height="720"
+  poster="/blog/calhippo/calhippo-pipeline-poster.webp"
+  aria-label="CALHippo pipeline animation: high-resolution segmentation, projection to low resolution, density U-Net training, and 3D reconstruction of the hippocampus"
+>
+  <source src="/blog/calhippo/calhippo-pipeline.mp4" type="video/mp4" />
+  Your browser can't play this video. <a href="/blog/calhippo/calhippo-pipeline.mp4">Download it here</a>.
+</video>
+
+Across CA1–CA4 the model predicts **over 35 million cells**: 18.1M excitatory neurons, 2.19M inhibitory interneurons, and 15.4M glial cells. The numbers hold up against the neuroanatomy literature:
+
+- the inhibitory-to-excitatory ratio is about 12%, and glia to neurons is roughly 1:1, both in line with prior estimates;
+- neuron counts per region are close to classic stereological counts: 15.2M vs 16M in CA1, 2.8M vs 2.7M in CA2+CA3, 2.3M vs 2.0M in CA4;
+- on held-out CA1 sections, the excitatory count error drops from 82.8% to 22.8% compared with the previous BigBrain scaffold.
+
+Everything is open: annotations, models, code, and the final point cloud. The same HR-to-LR approach could also be applied to other BigBrain regions.
+
+## Links
+
+- Paper (preprint): [CALHippo: Cell Segmentation for Neuronal Density Inference in the Human Hippocampus](https://federicobolelli.it/media/publications/pdfs/Paper-0727.pdf)
+- Code: [AImageLab-zip/CALHippo-Framework](https://github.com/AImageLab-zip/CALHippo-Framework)
+- Dataset: [CALHippo on Ditto](https://ditto.ing.unimore.it/calhippo/)
+- Live demo of LR density estimation: [Hugging Face Space](https://huggingface.co/spaces/AImageLab-Zip/CALHippo-Demo)
+- Conference: [MICCAI 2026](https://conferences.miccai.org/2026/)
+
+Thanks to Giovanni for a year of brain slices and debugging, and to Daniela, Jonathan, Federico, and Costantino for making this possible.
